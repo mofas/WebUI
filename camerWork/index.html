@@ -1,0 +1,48 @@
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>Camera Work</title>		
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>						
+		<script type='text/javascript' src='js/camera.js'></script>						
+		
+		<style type='text/css'>
+		    #camerWork{
+		    	margin: 0px auto;
+				  border:2px solid #000;
+				  background-color : #000;    
+				  width:960px;
+				  height:640px;
+				  overflow:hidden;    
+				  position:relative;    
+				}
+				
+				#camerWork img{
+				  position:absolute;
+				  display:none;      
+				}
+	</style>
+	
+	<script type='text/javascript'> 
+			$(function(){
+			    $("#camerWork").cameraWork();            
+			});
+		</script>
+		
+		
+		</head>
+		<body>
+		  <div id ="camerWork">
+		    <img src="http://farm6.staticflickr.com/5451/7430876360_48fa02cffb_h.jpg">
+		    <img src="http://farm9.staticflickr.com/8003/7440859532_273ae397a5_h.jpg">
+		    <img src="http://farm8.staticflickr.com/7262/7440864170_995e8a2fec_h.jpg">
+		    <img src="http://farm9.staticflickr.com/8151/7440872834_c27cc2a8ef_h.jpg">
+		</div>
+		 
+		</body>
+
+
+</html>
