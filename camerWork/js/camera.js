@@ -21,88 +21,21 @@
 	                'position' : 'relative',                                            
 	            });
 	            
-	            
-	            //需要修正......
-	            $img = $img.eq(0);
-	            
-	            console.log($img);
-	            console.log($img.width());
-	            console.log($img.height());
-	            
-	            var initImgWidth , initImgHeight ,
-	                finalImgWidth , finalImgHeight ,
-	                viewCenter_x , viewCenter_y,
-	                animationTime;
-	                            
-	            if(o.fromScale > o.toScale){
-	                initImgWidth = $img.width()*o.fromScale/100;
-	                initImgHeight = $img.height()*o.fromScale/100;
-	                finalImgWidth = $img.width()*o.toScale/100;
-	                finalImgHeight = $img.height()*o.toScale/100;                                 
-	            }
-	            else{
-	                initImgWidth = $img.width()*o.fromScale/100;
-	                initImgHeight = $img.height()*o.fromScale/100;                                            
-	                finalImgWidth = $img.width()*o.toScale/100;
-	                finalImgHeight = $img.height()*o.toScale/100;                    
-	            }
-	            
 	            $img.hide();
 	            
-	            //avert too small maintain scale
-	            var scale = 1;
-	            if(initImgWidth < o.width ){
-	                scale = initImgWidth/o.width;
-	                initImgWidth = o.width;
-	                initImgHeight = initImgHeight/scale;
-	            }
-	            if(initImgHeight < o.height){
-	                scale = initImgHeight / o.height;
-	                initImgHeight = o.height;
-	                initImgWidth = initImgWidth/scale;
-	            }
-	            if(finalImgWidth < o.width ){
-	                scale = finalImgWidth / o.width;
-	                finalImgWidth = o.width;
-	                finalImgHeight = finalImgHeight/scale;
-	            }
-	            if(finalImgHeight < o.height){
-	                scale = finalImgHeight / o.height;
-	                finalImgHeight = o.height;
-	                finalImgWidth = finalImgWidth/scale;
-	            }
-	            
-	            
-	            
-	            
-	            if(o.fromScale > o.toScale){
-	                viewCenter_x = (initImgWidth - o.width)/2;       
-	                viewCenter_y = (initImgHeight - o.height)/2;
-	            }
-	            else{
-	                viewCenter_x = (finalImgWidth - o.width)/2;       
-	                viewCenter_y = (finalImgHeight - o.height)/2;           
-	            }
-	            
-	            
+	            var animationTime;
 	            
 	            if(o.animationTime < 1000) 
 	                animationTime = 1000;
 	            else 
 	                animationTime = o.animationTime;
-	                                    
-	
-	            $element.data("initImgWidth"  , initImgWidth );
-	            $element.data("initImgHeight" , initImgHeight );
-	            $element.data("finalImgWidth" , finalImgWidth );
-	            $element.data("finalImgHeight", finalImgHeight );
-	            $element.data("animationTime", animationTime);             
-	            $element.data("viewCenter_x", viewCenter_x);
-	            $element.data("viewCenter_y", viewCenter_y);
-	
+	                
+	            $element.data("o" , o);    
+	                
 	                       
 	            function triggerEvent(){
 	                var $element = $(this),
+	                	  o = $element.data("o"),
 	                    $img = $element.find("img"),
 	                    sequence;
 	                if($img.length > 0){
@@ -116,12 +49,78 @@
 	                
 	                $img = $img.eq(sequence);
 	                $element.data("sequence" , sequence);
-	                var initImgWidth = $element.data("initImgWidth"),
-	                    initImgHeight = $element.data("initImgHeight"),
-	                    finalImgWidth= $element.data("finalImgWidth"),
-	                    finalImgHeight= $element.data("finalImgHeight"),
-	                    viewCenter_x= $element.data("viewCenter_x"),
-	                    viewCenter_y= $element.data("viewCenter_y");
+	                
+	                var src, imgWidth , imgHeight,
+	                initImgWidth , initImgHeight ,
+	                finalImgWidth , finalImgHeight ,
+	                viewCenter_x , viewCenter_y;
+	                
+	                src = $img.attr("src");
+	                var imageCheck = new Image();
+									imageCheck.src = src;
+									
+									
+									if(imageCheck.complete){										
+				 						imgWidth = imageCheck.width;
+				 						imgHeight = imageCheck.height;
+									}
+									console.log(imageCheck.width);
+									console.log(imageCheck.height);
+									//需要修改
+									imgWidth= 1600;
+									imgHeight= 1067;
+
+	                            
+			            if(o.fromScale > o.toScale){
+			                initImgWidth = imgWidth*o.fromScale/100;
+			                initImgHeight = imgHeight*o.fromScale/100;
+			                finalImgWidth = imgWidth*o.toScale/100;
+			                finalImgHeight = imgHeight*o.toScale/100;                                 
+			            }
+			            else{
+			                initImgWidth = imgWidth*o.fromScale/100;
+			                initImgHeight = imgHeight*o.fromScale/100;                                            
+			                finalImgWidth = imgWidth*o.toScale/100;
+			                finalImgHeight = imgHeight*o.toScale/100;                    
+			            }
+			            
+						
+		
+			            //avert too small maintain scale
+			            var scale = 1;
+			            if(initImgWidth < o.width ){
+			                scale = initImgWidth/o.width;
+			                initImgWidth = o.width;
+			                initImgHeight = initImgHeight/scale;
+			            }
+			            if(initImgHeight < o.height){
+			                scale = initImgHeight / o.height;
+			                initImgHeight = o.height;
+			                initImgWidth = initImgWidth/scale;
+			            }
+			            if(finalImgWidth < o.width ){
+			                scale = finalImgWidth / o.width;
+			                finalImgWidth = o.width;
+			                finalImgHeight = finalImgHeight/scale;
+			            }
+			            if(finalImgHeight < o.height){
+			                scale = finalImgHeight / o.height;
+			                finalImgHeight = o.height;
+			                finalImgWidth = finalImgWidth/scale;
+			            }
+			            
+									$element.data("finalImgWidth" , finalImgWidth);
+	                $element.data("finalImgHeight" , finalImgHeight);	
+			            
+		
+			            if(o.fromScale > o.toScale){
+			                viewCenter_x = (initImgWidth - o.width)/2;       
+			                viewCenter_y = (initImgHeight - o.height)/2;
+			            }
+			            else{
+			                viewCenter_x = (finalImgWidth - o.width)/2;       
+			                viewCenter_y = (finalImgHeight - o.height)/2;           
+			            }
 	
 	                
 	                var initX , initY , finalX , finalY , 
@@ -147,8 +146,7 @@
 	                                
 	
 	                $element.data("finalX" , finalX);
-	                $element.data("finalY" , finalY);
-	                
+	                $element.data("finalY" , finalY);	                
 	                $img.css({
 	                    'position'    : 'absolute',
 	                    'bottom'      : -initY + 'px',
@@ -157,20 +155,23 @@
 	                    'height'      : initImgHeight  + 'px',
 	                });                 
 	                
-	                $element.queue("camAn", function(next){
-	                    var animationTime = $(this).data("animationTime");
+	                
+	                $element.queue("camAn", function(next){	                    
+	                    var o = $(this).data("o");
+	                    var animationTime = o.animationTime;	                    
 	                    var sequence = $(this).data("sequence");
 	                    $(this).find("img").eq(sequence).fadeIn( animationTime/6 , next);
 	                });
 	                
 	                
 	                $element.queue("camAn", function(next){
-	                    var animationTime = $(this).data("animationTime"),                         
+	                		var o = $(this).data("o");	                    
+	                    var animationTime = o.animationTime,                         
 	                        finalX = $(this).data("finalX"),
 	                        finalY = $(this).data("finalY"),
 	                        finalImgWidth = $(this).data("finalImgWidth"),
 	                        finalImgHeight= $(this).data("finalImgHeight"),
-	                        sequence = $(this).data("sequence");	                    
+	                        sequence = $(this).data("sequence");	                                  
 	                    $(this).find("img").eq(sequence).animate( 
 	                        { 
 	                            bottom: -finalY ,
@@ -184,20 +185,22 @@
 	                });   
 	                
 	                
-	                
 	                $element.queue("camAn" , function(next){
-	                    var animationTime = $(this).data("animationTime");
+	                    var o = $(this).data("o");
+	                    var animationTime = o.animationTime;	     
 	                    var sequence = $(this).data("sequence");
 	                    $(this).find("img").eq(sequence).fadeOut( animationTime/6 , next);    
 	                });
 	                
 	                $element.queue("camAn" , function(next){
-	                    $element.trigger("cameraWork");
+	                    $element.trigger("cameraWork");	                    
 	                });                
+	                
 	
 	                $element.dequeue("camAn");
 	                           
 	            }; 
+	            	            
 	            
 	            $element.bind("cameraWork" , triggerEvent);                       
 	            $element.trigger("cameraWork");
