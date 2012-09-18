@@ -1,0 +1,67 @@
+.iphoneTypeInput{		
+	padding: 0;
+	list-style-type: none;		
+	
+	-webkit-border-radius: 5px;	
+	-moz-border-radius: 5px;	
+	border-bottom: 5px;	
+	box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.4) , 0px 2px 0px -1px rgba(0,0,0,0.3);
+}
+
+.iphoneTypeInput , .iphoneTypeInput input{
+	background: #f3f3f3;	
+	text-align: center;
+}
+
+.iphoneTypeInput li:first-child{	
+	box-shadow: inset 0px -1px 0px rgba(0,0,0,0.2);
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-top-right: 5px;
+	-moz-border-radius-top-left: 5px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;	
+}
+
+.iphoneTypeInput li:last-child{
+	box-shadow: inset 0px 1px 0px 0px rgba(255,255,255,1);
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottom-right: 5px;
+	-moz-border-radius-bottom-left: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+
+.iphoneTypeInput label{
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 3px;
+	padding: 8px 5px 2px 5px;	
+	width: 39%;	
+	text-align: right;
+	display: inline-block;
+	height: 30px
+}
+
+
+.iphoneTypeInput input{	
+	margin: 5px 10px;
+	height: 30px;
+	float:right;	
+	border: 0;
+	width: 45%;	
+}
+
+
+.iphoneTypeInput select{
+float: right;
+margin: 5px 10px;
+width: 45%;
+height: 30px;
+padding: 0 0 0 15%;
+border-width: 0px;
+background: #F3F3F3;
+text-align: center;
+}
