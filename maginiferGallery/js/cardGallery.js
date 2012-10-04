@@ -52,6 +52,7 @@ $.fn.extend({
                 $magnifier = $("<div class='magnifier'><ul class='magnifierGallery'></ul></div>"),
                 $magnifierGallery = $magnifier.find(".magnifierGallery"),
                 WrapWidth = $obj.width() , WrapHeight , magnifierW , magnifierH,
+                realLiW,
                 imgScale  , originMargin , targetMargin , magnifierLiW;
 
 
@@ -88,20 +89,20 @@ $.fn.extend({
                 //所有li的寬度必須跟magnifier一樣寬                
                 $lis = $galleryUL.find("li");                                
                 if(lisW < magnifierW){
-                    var innerWidth = magnifierW - (lisW - $lis.width());
+                    var innerWidth = magnifierW - (lisW - $lis.width());                    
                     $lis.css({ 
                         "width" : innerWidth,
                     });
                 }
-                lisW = $lis.outerWidth(true);                
+                realLiW = innerWidth;    
 
                 //找出center圖
                 var centerIndex = Math.floor($galleryUL.find("li").length/2);
                 $li = $galleryUL.find("li").eq(centerIndex);
                 $li.addClass("center");                           
-                WrapCenter = ($obj.width()-lisW)/2 
-                UlOffsetX = WrapCenter - lisW*$li.index();                
-                //center圖置中                              
+                WrapCenter = ($obj.width()-realLiW)/2 
+                UlOffsetX = WrapCenter - realLiW*$li.index();                                
+                //center圖置中                
                 $galleryUL.css({ left: UlOffsetX});                             
             }
             
@@ -121,11 +122,9 @@ $.fn.extend({
                 $galleryUL.css({ 'margin-top' : marginTop});                            
             }
 
-            var appendMagnifier = function(){                                           
-                if(WrapWidth < options.magnifierW)
-                    magnifierW = WrapWidth;             
-                                
-                magnifierH = magnifierW*imgScale;
+            var appendMagnifier = function(){
+
+                magnifierH = magnifierW*imgScale;            
                 var XOffset = ($obj.width()- magnifierW)/2,
                     YOffset = ($obj.outerHeight() - magnifierH)/2 - 30;
 
@@ -140,7 +139,7 @@ $.fn.extend({
                 var $magnifierImgs = $imgs.clone().add($imgs.clone());
                 $magnifier.find(".magnifierGallery").html($magnifierImgs);                                 
                 $magnifierImgs.each(function(){
-                    var imageLink = $(this).attr("link");
+                    var imageLink = $(this).attr("link") || "#";
                     $(this).wrap('<li class="imageWrap"><a href="'+imageLink+'"></a></li>');
                 });                 
                 $magnifier.find(".imageWrap").css({
@@ -159,13 +158,11 @@ $.fn.extend({
                         centerOuterW = $center.outerWidth(true),
                         centerMargin = centerOuterW - $center.width(),
                         index = $(this).index(),
-                        liOuterW = $(this).outerWidth(true),
                         $li = $(this);
-
                     //判斷點了幾格遠
                     var diff = (index-centerIndex),
                         diffABS = Math.abs(diff);    
-
+                    console.log(diff);
                     //隱藏title
                     if(diff != 0){
                         resetTitle($center.find(".title"));                    
@@ -173,28 +170,30 @@ $.fn.extend({
                     if(diff > 0){
                         
                         ULmoveLeft($magnifierGallery , diffABS);   
-                        $center.removeClass("center");                     
-                        
+                        $center.removeClass("center");
+                        ULmoveLeft($galleryUL , diffABS);                                
+                        animateCallback($li , $center);
+                        console.log($galleryUL.css("left"));
                         $galleryUL.animate({
-                               left: '-='+liOuterW*diffABS+'',
+                               left: '-='+realLiW*diffABS+'',
                             }, options.animateSpeed , function(){  
                                 ULmoveLeft($galleryUL , diffABS);                                
-                                animateCallback($li , $center);
-                        });                                
+                                animateCallback($li , $center);                                
+                        });                         
+                        
                         $magnifierGallery.animate({
                             left: '-='+magnifierW*diffABS+'',
-                        } , options.animateSpeed);                           
+                        } , options.animateSpeed);                                                   
                     }
                     else if(diff < 0){      
                         
                         ULmoveRight($magnifierGallery , diffABS);
-                        $center.removeClass("center");
-
+                        $center.removeClass("center");                                   
                         $galleryUL.animate({
-                               left: '+='+liOuterW*diffABS+'',
-                            }, options.animateSpeed , function(){    
-                                animateCallback($li , $center);
+                               left: '+='+realLiW*diffABS+'',                               
+                            }, options.animateSpeed , function(){                                    
                                 ULmoveRight($galleryUL , diffABS);
+                                animateCallback($li , $center);
                         });                        
                         $magnifierGallery.animate({
                             left: '+='+magnifierW*diffABS+'',
@@ -255,25 +254,23 @@ $.fn.extend({
                 while(times--){                    
                     var $last = $ul.find("li").last();
                     $last.detach();                
-                    $ul.prepend($last);                    
+                    $ul.prepend($last);            
+                    
                     $ul.css({
-                        left: '-='+$last.outerWidth(true)+'',
+                        left: '-='+realLiW+'',
                     });
+                    
                 }                
             }
 
             var ULmoveLeft = function($ul , times){                
-                while(times--){                    
-                    var $first = $ul.find("li").first(),
-                        $clear = $ul.find(".clear");
-                    $first.detach();                                
-                    if($clear.length > 0)
-                        $clear.before($first);                    
-                    else
-                        $ul.append($first);    
+                while(times--){                                                    
+                    var $first = $ul.find("li").first();                        
+                    $first.detach();                                                    
+                    $ul.append($first);
                     $ul.css({
-                        left: '+='+$first.outerWidth(true)+'',
-                    });
+                        left: '+='+realLiW+'',
+                    });                          
                 }                
             }
 
@@ -288,7 +285,9 @@ $.fn.extend({
                     bindClickButtonEvent();
                 });                     
 
-                if (navigator.appName == 'Microsoft Internet Explorer'){
+                var arVersion = navigator.appVersion.split("MSIE");
+                var version = parseFloat(arVersion[1]);
+                if (version < 9) {                    
                     imgScale = $imgs.first().height()/$imgs.first().width();    
                     magnifierW = $imgs.first().width()*options.zoomScale;
                     $galleryUL.find("a").height($imgs.first().height());
