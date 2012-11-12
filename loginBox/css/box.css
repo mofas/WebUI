@@ -1,0 +1,150 @@
+
+
+body{
+	background: url(img/background.png);
+}
+
+.italic{	
+	font-weight: bold;
+	padding: 0 30px;
+	letter-spacing: 2px;
+	font-size: 32px;	
+	font-family: 'Mr Dafoe', cursive;
+}
+
+#loginTitle{
+	width: 400px;
+	margin: 40px auto;
+	padding-left: 40px;
+	margin-bottom: 0px;
+	text-align: center;
+	color: #533;
+	font-size: 24px;
+	letter-spacing: 1px;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	font-family: 'Strait', sans-serif;
+}
+
+
+#box{
+	margin: 20px auto;
+	width: 360px;
+	height: 340px;
+	padding: 20px;
+	background:  #E9E2EC;
+	border-radius: 5px;
+	border: 1px solid #fff;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+
+#box .inputWrap{
+	margin: 30px auto;
+	margin-top: 20px;
+	padding: 0px 20px;
+	width: 300px;
+	height: 50px;
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	background: #fafafa;
+	box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.15) , 0 1px 0 0 rgba(255,255,255,0.6);
+}
+
+#box .inputWrap input{	
+	display: block;
+	margin: 2px 0 0 20px;
+	width: 278px;
+	height: 46px;
+	border: 0px;
+	padding:0 10px;
+	font-size: 18px;
+	background: transparent;
+	color: #A39489;
+}
+#box .inputWrap input[type="password"]{
+	letter-spacing: 3px;
+}
+
+#box .inputWrap.disabled{
+	background: #E6E6E6;
+}
+
+#box .checkboxWrap{
+	margin: 10px auto;
+	width: 340px;
+	height: 40px;	
+}
+
+#box .checkboxWrap .checkbox{	
+	float: left;	
+	width: 20px;
+	height: 20px;
+	background : #f1f1f1;
+	padding: 5px;
+	border-radius: 5px;
+	border-top: 1px solid #fff;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+
+
+#box .checkboxWrap .label{
+	margin-left: 50px;
+	height: 40px;
+	line-height: 32px;
+	font-size: 18px;
+	color: #666;
+	text-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+#box .forgetLink{
+	display: block;
+	padding: 0 10px;
+	margin: 10px auto;
+	width: 340px;
+	height: 20px;
+
+	font-family: 'Strait', sans-serif;
+	font-size: 18px;	
+	text-decoration: none;
+	color: #92867D;
+}
+
+#box .loginButton{
+	margin: 30px auto;
+	width: 310px;
+	padding: 10px;
+	height: 20px;	
+
+	background: rgb(138,156,80);
+	background: -moz-linear-gradient(top,  rgba(138,156,80,1) 0%, rgba(99,119,62,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(138,156,80,1)), color-stop(100%,rgba(99,119,62,1)));
+	background: -webkit-linear-gradient(top,  rgba(138,156,80,1) 0%,rgba(99,119,62,1) 100%);
+	background: -o-linear-gradient(top,  rgba(138,156,80,1) 0%,rgba(99,119,62,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(138,156,80,1) 0%,rgba(99,119,62,1) 100%);
+	background: linear-gradient(to bottom,  rgba(138,156,80,1) 0%,rgba(99,119,62,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a9c50', endColorstr='#63773e',GradientType=0 );
+
+
+	border-radius: 3px;
+	border-top: 1px solid rgba(255,255,255,0.8);
+	border-left: 1px solid rgba(255,255,255,0.6);
+	border-right: 1px solid rgba(255,255,255,0.6);
+	border-bottom: 1px solid rgba(255,255,255,0.6);
+	
+	text-align: center;
+	font-size: 18px;
+	color: #fff;
+	text-shadow: 0 -1px 0 #333;
+	letter-spacing: 1px;
+	font-family: 'Strait', sans-serif;
+
+	box-shadow: 0 0 1px 1px rgba(0,0,0,0.4), 
+				0 2px 3px 0 rgba(0,0,0,0.4) ,
+				inset   0   2px  5px 0 rgba(255,255,255,0.4),
+				inset   0  -6px  10px 0 rgba(0,0,0,0.1),
+				inset  2px    0  5px 0 rgba(0,0,0,0.1),
+				inset -2px    0  5px 0 rgba(0,0,0,0.1);
+	
+	cursor: pointer;
+}
