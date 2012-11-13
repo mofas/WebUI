@@ -1,0 +1,269 @@
+
+
+.appContent.facebook{
+	background: #c3cddf;	
+}
+
+.appContent.facebook .header{
+	border-bottom: 2px solid #222;
+}
+
+.appContent.facebook .header , .appContent.facebook .header .button{
+	background: rgb(127,147,188);
+	background: -moz-linear-gradient(top,  rgba(127,147,188,1) 0%, rgba(59,89,152,1) 50%, rgba(36,74,150,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(127,147,188,1)), color-stop(50%,rgba(59,89,152,1)), color-stop(100%,rgba(36,74,150,1)));
+	background: -webkit-linear-gradient(top,  rgba(127,147,188,1) 0%,rgba(59,89,152,1) 50%,rgba(36,74,150,1) 100%);
+	background: -o-linear-gradient(top,  rgba(127,147,188,1) 0%,rgba(59,89,152,1) 50%,rgba(36,74,150,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(127,147,188,1) 0%,rgba(59,89,152,1) 50%,rgba(36,74,150,1) 100%);
+	background: linear-gradient(to bottom,  rgba(127,147,188,1) 0%,rgba(59,89,152,1) 50%,rgba(36,74,150,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7f93bc', endColorstr='#244a96',GradientType=0 );
+}
+
+.appContent.facebook .header .button:active{
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0)));
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 );
+}
+
+.appContent.facebook .header .leftButton img{
+	display: block;
+	margin: 1px auto;
+}
+
+.appContent.facebook .header .rightButton img{
+	display: block;
+	margin: 0px auto;
+	margin-top: -4px;	
+}
+
+.appContent.facebook .header .leftButton{
+	float:left;
+}
+
+.appContent.facebook .header .rightButton{
+	float:right;
+}
+
+
+.appContent.facebook .header .mainPanel{
+	margin: 0px auto;
+	margin-top: 2px;
+	width: 152px;
+	height: 38px;
+}
+
+.appContent.facebook .header .mainPanel .imgWrap{	
+	position: relative;
+	height: 30px;
+	display: inline-block;
+	margin: 6px 9px;
+	cursor: pointer;	
+}
+.appContent.facebook .header .mainPanel .imgWrap img{
+	z-index: 1;	
+}
+
+.appContent.facebook .header .mainPanel .imgOverlay{
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: 40px;
+	height: 40px;
+	z-index: 0;
+	border-radius: 50%;
+}
+.appContent.facebook .header .mainPanel .imgWrap:active .imgOverlay{	
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(100%,rgba(255,255,255,0)));
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+background: radial-gradient(ellipse at center,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 );
+
+}
+
+
+
+
+.appContent.facebook .newsfeed{
+	width: 100%;
+	height: 38px;
+	background: #eee;
+	border-top: 2px solid rgba(255,255,255,0.6);
+	box-shadow: 0 1px 2px 1px rgba(0,0,0,0.4);
+}
+
+.appContent.facebook .newText{
+	margin: 8px auto;
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color: #777;
+	text-shadow: 0 1px 0 #fff;
+}
+
+.appContent.facebook .newsIcon{
+	position: relative;
+	float:left;
+	margin-top: 14px;
+	margin-left: 95px;
+	width: 6px;
+	height: 11px;
+	background: #777;
+}
+
+.appContent.facebook .newsIcon:before{
+	content: '';
+	position: absolute;
+	left: -4px;
+	top: -5px;
+	width: 0;
+	height: 0;	
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 9px solid #777;
+}
+
+.appContent.facebook .newsCount{
+	float:right;
+	margin-top: 6px;
+	margin-right: 60px;
+	height: 20px;	
+	padding: 2px 10px 2px 10px;
+	background: #777;
+
+	color: #eee;
+	font-weight: bold;
+	text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+
+	border-radius: 3px;
+	box-shadow: 0 -1px 0 0 #fff,
+				0  1px 0 0 #fff,
+				inset 0 1px 2px 0 rgba(0,0,0,0.6);
+}
+
+.appContent.facebook .storyBlock {
+	position: relative;
+	padding: 10px 10px 50px 10px;
+	margin: 10px auto;
+	width: 280px;
+	min-height: 120px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.8),
+				0 1px 3px 0 rgba(0,0,0,0.2);
+}
+
+.appContent.facebook .storyBlock  .thumbnail{	
+	width: 40px;
+	height: 40px;
+	float:left;
+}
+
+.appContent.facebook .storyBlock .writterName{
+	display: inline-block;
+	margin-left: 10px;	
+	font-weight: bold;
+	color: #3b5998;	
+}
+
+.appContent.facebook .storyBlock .timeAndLocation{	
+	display: inline-block;
+	margin-left: 10px;		
+	font-size: 14px;
+	color: #aaa;
+	position: relative;
+}
+
+.appContent.facebook .storyBlock .timeAndLocation:after{	
+	content: ' ';
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	top: 6px;
+	right: -12px;
+	background:  #aaa;
+	border-radius: 4px;
+}
+.appContent.facebook .storyBlock .locationIcon{
+	display: inline-block;
+	margin-left: 13px;
+	height: 10px;
+}
+
+.appContent.facebook .storyBlock .locationIcon img{
+	position: relative;
+	top: -5px;
+}
+
+.appContent.facebook .storyBlock .userContent{
+	margin: 10px auto;
+	width: 280px;
+	font-size: 12px;	
+}
+
+.appContent.facebook .storyBlock .photoWrap{	
+	width: 310px;	
+	margin-left: -15px;
+	margin-top: 10px;	
+}
+
+.appContent.facebook .storyBlock .photoWrap img{
+	width: 100%;	
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.4);
+}
+
+.appContent.facebook .storyBlock .UFIContainer{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	border-top: 1px solid #ddd;
+	width: 100%;
+	height: 40px;
+	background: #eceff5;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.appContent.facebook .storyBlock .likeLink , .appContent.facebook .storyBlock .commentLink{
+	text-decoration: none;
+	display: block;
+	float:left;
+	margin: 0 10px;
+	padding: 12px 0;
+	font-weight: bold;
+	font-size: 14px;
+	color: #3b5998;
+
+}
+
+.appContent.facebook .storyBlock .sepDot{
+	float:left;
+	width: 3px;
+	height: 3px;
+	margin-top: 18px;
+	background: #3b5998;
+	border-radius: 3px;
+}
+
+.appContent.facebook .storyBlock .UIActionLinks{
+	float:right;
+	width: 140px;
+	text-align:right;
+	margin-top: 10px;
+	height: 20px;
+	padding: 0 10px;
+}
+
+.appContent.facebook .storyBlock .UIActionLinks .count{
+	color: #3b5998;
+	position: relative;
+	top: -4px;
+}
