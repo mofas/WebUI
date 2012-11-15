@@ -1,4 +1,8 @@
 
+*{	
+	-webkit-user-select: none;
+}
+
 body{
 	background: #eee;
 }
@@ -29,6 +33,7 @@ body{
 	border-radius: 5px;	
 	background: #ddd;
 	position: relative;
+	overflow: hidden;
 }
 
 .appContent .header{
@@ -37,6 +42,20 @@ body{
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;	
 	box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.2);	
+}
+
+.appContent .header .centerText{
+	width: 200px;
+	margin: 0px auto;
+	margin-bottom: 5px;
+	font-size: 24px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	color :#fff;
+	text-shadow: 0 -1.5px 1px rgba(0,0,0,0.8);
+	font-family: 'Gudea', sans-serif;
 }
 
 .appContent .header .button{
@@ -51,4 +70,16 @@ body{
 				inset 0 1px 2px 0 rgba(0,0,0,0.4),
 				inset 0 -10px 20px -2px rgba(0,0,0,0.2);
 	cursor: pointer;
+}
+
+.appContent .header .button img{
+	margin: 0 auto;
+	display: block;
+}
+.appContent .header .leftButton{
+	float:left;
+}
+
+.appContent .header .rightButton{
+	float:right;
 }

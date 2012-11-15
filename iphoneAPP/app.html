@@ -12,10 +12,12 @@
         <link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Londrina+Solid' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Gudea:700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/facebook.css">
         <link rel="stylesheet" href="css/twitter.css">
         <link rel="stylesheet" href="css/youtube.css">
+        <link rel="stylesheet" href="css/stratus.css">
     </head>
     <body>
         <!--[if lt IE 9]>
@@ -162,7 +164,10 @@
                 <div class="header">
                     <img class="youtubeIcon" src="images/youtube.png">
                 </div>
-                <div class="selectMenu">
+
+                <a class="openSelectMenuButton" href="#">Share</a>
+
+                <div class="selectMenu hide">
                     <a class="selectOptionButton" href="#">Google+</a>
                     <a class="selectOptionButton" href="#">Twitter</a>
                     <a class="selectOptionButton" href="#">Facebook</a>
@@ -173,10 +178,44 @@
                 </div>
             </div>
         </div>
+
+        <div class="ihponeWrap">
+            <div class="functionBar">2:30 PM</div>
+            <div class="appContent stratus">
+                <div class="header">
+                    <div class="button leftButton">
+                       <img src="images/setting.svg">
+                    </div>
+                    <div class="button rightButton">
+                        <img src="images/plus.svg">
+                    </div>
+                    <div class="centerText">Stratus</div>
+                </div>
+                
+                <ul class="simple-icon-list">
+                    <li><img class="icon" src="css/img/prefer-icon.png"><a href="">All</a></li>
+                    <li><img class="icon" src="css/img/trash-icon.png"><a href="">Trash</a></li>
+                </ul>
+                <ul class="simple-icon-list">
+                    <li><img class="icon" src="css/img/ticket-icon.png"><a href="">Ticket</a></li>
+                    <li><img class="icon" src="css/img/info-icon.png"><a href="">Info</a></li>
+                    <li><img class="icon" src="css/img/audio-icon.png"><a href="">Audio</a></li>
+                    <li><img class="icon" src="css/img/bookmarks-icon.png"><a href="">Bookmarks</a></li>
+                    <li><img class="icon" src="css/img/notepad-icon.png"><a href="">Notepad</a></li>
+                    <li><img class="icon" src="css/img/photos-icon.png"><a href="">Photos</a></li>
+                </ul>
+
+            
+            </div>
+        </div>
+
+
+
+
                 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.2.min.js"><\/script>')</script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js"></script>        
     	
     </body>
 </html>
