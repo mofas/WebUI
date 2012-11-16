@@ -1,14 +1,7 @@
 
 
 .appContent.buttonGroup{
-	background: rgb(5,43,67);
-	background: -moz-linear-gradient(top,  rgba(5,43,67,1) 0%, rgba(46,94,124,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(5,43,67,1)), color-stop(100%,rgba(46,94,124,1)));
-	background: -webkit-linear-gradient(top,  rgba(5,43,67,1) 0%,rgba(46,94,124,1) 100%);
-	background: -o-linear-gradient(top,  rgba(5,43,67,1) 0%,rgba(46,94,124,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(5,43,67,1) 0%,rgba(46,94,124,1) 100%);
-	background: linear-gradient(to bottom,  rgba(5,43,67,1) 0%,rgba(46,94,124,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#052b43', endColorstr='#2e5e7c',GradientType=0 );
+	background: #111;
 }
 
 .appContent.buttonGroup .header{
@@ -92,7 +85,7 @@
 
 
 .appContent .buttonWrap{
-	margin: 0px auto;
+	margin: 4px auto;
 	width: 100%;
 	padding: 10px 0;
 }

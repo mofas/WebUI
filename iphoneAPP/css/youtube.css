@@ -24,11 +24,92 @@
 }
 
 
+.appContent.youtube .mainBoard , .appContent.youtube .dashBoard{
+	position: absolute;
+	width: 100%;
+	height: 440px;
+	left: 0;
+	top: 42px;	
+}
+
+.appContent.youtube .mainBoard{
+	
+	box-shadow: -4px 0 6px -1px rgba(0,0,0,0.8),
+				0 0 0 1px rgba(0,0,0,0.6);
+
+	border-radius: 10px;
+
+	background: rgb(107,107,107);
+	background: -moz-linear-gradient(top,  rgba(107,107,107,1) 0%, rgba(40,40,40,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(107,107,107,1)), color-stop(100%,rgba(40,40,40,1)));
+	background: -webkit-linear-gradient(top,  rgba(107,107,107,1) 0%,rgba(40,40,40,1) 100%);
+	background: -o-linear-gradient(top,  rgba(107,107,107,1) 0%,rgba(40,40,40,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(107,107,107,1) 0%,rgba(40,40,40,1) 100%);
+	background: linear-gradient(to bottom,  rgba(107,107,107,1) 0%,rgba(40,40,40,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b6b6b', endColorstr='#282828',GradientType=0 );
+}
+
+ .appContent.youtube .dashBoard{
+ 	background: url(img/dashboard.png);
+ }
+
+.appContent.youtube .dashBoard .dashBoardTitle{
+	margin: 5px auto;
+	padding: 10px 20px 0px 20px;
+	position: relative;
+}
+
+.appContent.youtube .dashBoard .dashBoardTitle .thumbnail{
+	border-radius: 50%;
+}
+
+.appContent.youtube .dashBoard .dashBoardTitle .name{	
+	position: absolute;
+	top: 20px;
+	left: 90px;
+	font-size: 24px;
+	color: #fff;	
+	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+}
+
+.appContent.youtube .dashBoard .simple-icon-list{
+	width: 280px;
+	margin: 5px 0px;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: 0 0 0 0 #000;
+	border-top: 1px solid rgba(0,0,0,0.6);
+	border-bottom: 0px;
+}
+
+.appContent.youtube .dashBoard .simple-icon-list li{
+	border-top: 1px solid rgba(255,255,255,0.15);
+	border-bottom: 1px solid rgba(0,0,0,0.6);
+	border-radius: 0;
+}
+.appContent.youtube .dashBoard .simple-icon-list li:active{
+	background :#fff;
+}
+
+.appContent.youtube .dashBoard .simple-icon-list li:last-child{
+	border-bottom: 0px;
+}
+
+.appContent.youtube .dashBoard .simple-icon-list a{
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+}
+.appContent.youtube .dashBoard .simple-icon-list li:active a{
+	color: #111;
+	text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
+}
+
+
 .appContent .openSelectMenuButton{	
 	display: block;
 	position: absolute;
-	top: 200px;
-	left: 16px;
+	top: 240px;
+	left: 18px;
 
 	width: 280px;
 	margin: 0 auto;
@@ -40,7 +121,7 @@
 	text-decoration: none;
 	
 	border-radius: 8px;
-	border: 4px solid #000;
+	border: 2px solid #000;
 
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.8);
 
@@ -57,6 +138,15 @@
 	background: linear-gradient(to bottom,  rgba(84,84,84,1) 0%,rgba(56,56,56,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 );
 
+}
+
+.appContent .openDashBoardButton{
+	margin-top: 90px;
+	text-align: center;
+	font-size: 24px;
+	padding: 0 20px;
+	color: #fff;
+	text-shadow: 0 3px 0 #000;
 }
 
 .appContent .openSelectMenuButton:active{
@@ -80,12 +170,12 @@
 	border-bottom-right-radius: 5px;
 
 	background: -moz-linear-gradient(top,  rgba(221,221,221,0.78) 0%, rgba(150,150,150,0.78) 6%, rgba(68,68,68,0.78) 7%, rgba(85,85,85,0.8) 100%);
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(221,221,221,0.78)), color-stop(6%,rgba(150,150,150,0.78)), color-stop(7%,rgba(68,68,68,0.78)), color-stop(100%,rgba(85,85,85,0.8)));
-background: -webkit-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
-background: -o-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
-background: -ms-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
-background: linear-gradient(to bottom,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7dddddd', endColorstr='#cc555555',GradientType=0 );
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(221,221,221,0.78)), color-stop(6%,rgba(150,150,150,0.78)), color-stop(7%,rgba(68,68,68,0.78)), color-stop(100%,rgba(85,85,85,0.8)));
+	background: -webkit-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
+	background: -o-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
+	background: -ms-linear-gradient(top,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
+	background: linear-gradient(to bottom,  rgba(221,221,221,0.78) 0%,rgba(150,150,150,0.78) 6%,rgba(68,68,68,0.78) 7%,rgba(85,85,85,0.8) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c7dddddd', endColorstr='#cc555555',GradientType=0 );
 
 
 	position: relative;
