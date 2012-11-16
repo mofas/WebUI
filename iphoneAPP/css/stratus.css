@@ -3,20 +3,6 @@
 	background: #333;
 }
 
-.appContent.stratus .header{
-	border-bottom: 1px solid #000;
-	background: rgb(124,124,124);
-	background: -moz-linear-gradient(top,  rgba(124,124,124,1) 0%, rgba(85,85,85,1) 50%, rgba(51,51,51,1) 51%, rgba(51,51,51,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(124,124,124,1)), color-stop(50%,rgba(85,85,85,1)), color-stop(51%,rgba(51,51,51,1)), color-stop(100%,rgba(51,51,51,1)));
-	background: -webkit-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
-	background: -o-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
-	background: linear-gradient(to bottom,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c7c7c', endColorstr='#333333',GradientType=0 );
-	z-index: -1;
-}
-
-
 .appContent.stratus .header .leftButton{
 	margin-left: 10px;
 }
@@ -63,12 +49,7 @@
 	
 	border-radius: 7px;
 	border: 2px solid rgba(0,0,0,0.9);	
-	background :rgba(0,0,0,0);		
-}
-
-
-.appContent.stratus .header .button img{
-	margin: 3px auto;	
+	background :rgba(0,0,0,0);
 }
 
 

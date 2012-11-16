@@ -220,35 +220,13 @@
 	font-size: 12px;
 }
 
-.appContent .tabbar {
-	position: absolute;
-	bottom: 0;
-	border-top: 1px solid #000;
-	height: 60px;
-	width: 320px;
-	background: #111;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+
+
+.appContent.twitter .tabbar .tabbar-ul{	
+	background: url(img/tabbarBG.png);	
 }
 
-
-
-.appContent .tabbar .tabbar-ul{
-	margin-top: 1px;
-	border-top: 1px solid rgba(255,255,255,0.6);
-	background: url(img/tabbarBG.png);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	overflow: hidden;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-.appContent .tabbar .tabbar-ul li{
-	float:left;
-	width: 80px;
-	height: 59px;
+.appContent.twitter .tabbar .tabbar-ul li{	
 	background: -moz-linear-gradient(top,  rgba(100,100,100,0.8) 0%, rgba(0,0,0,0.8) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(100,100,100,0.8)), color-stop(100%,rgba(0,0,0,0.8)));
 	background: -webkit-linear-gradient(top,  rgba(100,100,100,0.8) 0%,rgba(0,0,0,0.8) 100%);
@@ -258,30 +236,8 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#000000',GradientType=0 );
 }
 
-.appContent .tabbar .tabbar-ul li img{
-	margin: 2px auto;
-	margin-bottom: 0;
-	display: block;
-}
 
-.appContent .tabbar a{
-	text-decoration: none;
-	display: block;
-}
-
-.appContent .tabbar .tabbarTitle{
-	margin-top: -2px;
-	text-align: center;
-	font-size: 14px;
-	color: #aaa;	
-	font-family: 'Average Sans', sans-serif;
-	font-weight: bold;
-}
-
-.appContent .tabbar .tabbar-ul li.selected{
+.appContent.twitter .tabbar .tabbar-ul li.selected{
 	background: #111;
 }
 
-.appContent .tabbar .tabbar-ul li.selected .tabbarTitle{
-	color: #fff;
-}

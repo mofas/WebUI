@@ -44,6 +44,19 @@ body{
 	box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.2);	
 }
 
+.appContent .header.black{
+	border-bottom: 1px solid #000;
+	background: rgb(124,124,124);
+	background: -moz-linear-gradient(top,  rgba(124,124,124,1) 0%, rgba(85,85,85,1) 50%, rgba(51,51,51,1) 51%, rgba(51,51,51,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(124,124,124,1)), color-stop(50%,rgba(85,85,85,1)), color-stop(51%,rgba(51,51,51,1)), color-stop(100%,rgba(51,51,51,1)));
+	background: -webkit-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
+	background: -o-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
+	background: linear-gradient(to bottom,  rgba(124,124,124,1) 0%,rgba(85,85,85,1) 50%,rgba(51,51,51,1) 51%,rgba(51,51,51,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c7c7c', endColorstr='#333333',GradientType=0 );
+	z-index: -1;
+}
+
 .appContent .header .centerText{
 	width: 200px;
 	margin: 0px auto;
@@ -75,6 +88,7 @@ body{
 .appContent .header .button img{
 	margin: 0 auto;
 	display: block;
+	margin: 3px auto;
 }
 .appContent .header .leftButton{
 	float:left;
@@ -82,4 +96,67 @@ body{
 
 .appContent .header .rightButton{
 	float:right;
+}
+
+.appContent .tabbar {
+	position: absolute;
+	bottom: 0;
+	border-top: 1px solid #000;
+	height: 60px;
+	width: 320px;
+	background: #111;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.appContent .tabbar .tabbar-ul{		
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.appContent .tabbar .tabbar-ul li{
+	height: 59px;
+	float:left;
+}
+.appContent .tabbar .tabbar-ul.twoTab li{
+	width: 160px;
+}
+
+.appContent .tabbar .tabbar-ul.threeTab li{
+	width: 102px;
+}
+.appContent .tabbar .tabbar-ul.fourTab li{
+	width: 80px;	
+}
+
+.appContent .tabbar .tabbar-ul.fiveTab li{
+	width: 64px;
+}
+
+.appContent .tabbar a{
+	text-decoration: none;
+	display: block;
+}
+
+.appContent .tabbar .tabbar-ul li img{
+	margin: 2px auto;
+	margin-bottom: 0;
+	display: block;
+}
+
+.appContent .tabbar .tabbarTitle{
+	margin-top: -2px;
+	text-align: center;
+	font-size: 14px;
+	color: #aaa;	
+	font-family: 'Average Sans', sans-serif;
+	font-weight: bold;
+}
+
+.appContent .tabbar .tabbar-ul li.selected .tabbarTitle{
+	color: #fff;
 }
