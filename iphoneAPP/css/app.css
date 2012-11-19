@@ -3,6 +3,16 @@
 	-webkit-user-select: none;
 }
 
+ul , li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+}
+
 body{
 	background: #eee;
 }
@@ -114,8 +124,7 @@ body{
 	border-bottom-right-radius: 5px;
 	overflow: hidden;
 	margin: 0;
-	padding: 0;
-	list-style: none;
+	padding: 0;	
 }
 
 .appContent .tabbar .tabbar-ul li{
@@ -168,8 +177,7 @@ body{
 	margin: 20px auto;
 	width: 280px;
 	background: #fff;
-	padding: 0;
-	list-style: none;
+	padding: 0;	
 
 	border: 1px solid #222;
 

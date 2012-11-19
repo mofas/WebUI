@@ -3,8 +3,36 @@
 
 
 $(document).ready(function() {
+	facebook.init();
 	youtube.init();
 });
+
+
+
+var facebook = (function(o){
+
+	var $el , $mainPanel;
+
+	var bindEvent = function(){
+		$mainPanel.on("click" , ".iconWrap" , function(){			
+			$(this).toggleClass("active");
+			if($(this).index() === 0){
+				$friendRequest.toggleClass("hide");
+			}
+		});
+	}
+
+	o.init = function(){
+		$el = $(".facebook");		
+		$mainPanel = $el.find(".mainPanel");
+		$friendRequest = $el.find(".friendRequest");
+		bindEvent();
+	}
+
+	return o;
+
+})( facebook || {} );
+
 
 
 
