@@ -1,0 +1,27 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+ <g>
+  <title>layer2</title>
+  <g id="svg_12">
+   <path id="svg_13" d="m145.40239,74.00001l301.31709,0c11.51251,0 20.78052,11.81913 20.78052,26.5l0,318.00002c0,14.681 -9.26797,26.49997 -20.78052,26.49997l-280.53654,0c-11.74388,0 -114.40181,-162.88766 -124.68296,-185.49997c11.55229,-20.50917 92.39011,-185.50001 103.90244,-185.50001l0,-0.00002l-0.00003,0.00001l0,0z" stroke-dashoffset="0" stroke-miterlimit="4" stroke="#2f4f4f" fill-rule="nonzero" fill-opacity="0.5" fill="#ffffff"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g opacity="0.75" id="svg_3">
+   <path d="m148.18289,74.00001l297.78052,0c11.37732,0 20.53659,11.59613 20.53659,26l0,312.00002c0,14.40399 -9.15924,25.99997 -20.53659,25.99997l-277.2439,0c-11.60603,0 -113.05905,-159.81433 -123.21953,-181.99997c11.41671,-20.12221 91.30571,-182.00001 102.68294,-182.00001l0,-0.00002l-0.00003,0.00001l0,0z" stroke-dashoffset="0" stroke-miterlimit="4" stroke="#2f4f4f" fill-rule="nonzero" fill-opacity="0.5" id="svg_4" fill="url(#svg_9)"/>
+  </g>
+  <g id="svg_5">
+   <path d="m151.2561,86.00002l289.29266,0c11.05301,0 19.95123,10.83155 19.95123,24.28572l0,291.42853c0,13.45432 -8.89822,24.28574 -19.95123,24.28574l-269.34146,0c-11.27524,0 -109.83646,-149.27713 -119.70732,-169.99997c11.0913,-18.79549 88.70319,-170.00002 99.75609,-170.00002l0,-0.00002l0,0.00001l0,0l0.00003,0.00001z" stroke-dashoffset="0" stroke-miterlimit="4" stroke="#2f4f4f" fill-rule="nonzero" fill-opacity="0.9" id="svg_6" fill="url(#svg_8)"/>
+  </g>
+ </g>
+ <defs>
+  <linearGradient id="svg_8" x1="0" y1="0" x2="0" y2="1">
+   <stop offset="0" stop-color="#11aae1"/>
+   <stop offset="1" stop-color="#0177cb"/>
+  </linearGradient>
+  <radialGradient id="svg_9" cx="0.5" cy="0.5" r="0.5">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#000000"/>
+  </radialGradient>
+ </defs>
+</svg>
