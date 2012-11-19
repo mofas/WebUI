@@ -157,6 +157,18 @@ body{
 	display: block;
 }
 
+.appContent .tabbar .tabbar-ul li.selected img{
+	display: none;
+}
+
+.appContent .tabbar .tabbar-ul li img.active{
+	display: none;
+}
+
+.appContent .tabbar .tabbar-ul li.selected img.active{
+	display: block;
+}
+
 .appContent .tabbar .tabbarTitle{
 	margin-top: -2px;
 	text-align: center;

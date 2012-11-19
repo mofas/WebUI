@@ -5,6 +5,7 @@
 $(document).ready(function() {
 	facebook.init();
 	youtube.init();
+	twitter.init();
 });
 
 
@@ -32,6 +33,27 @@ var facebook = (function(o){
 	return o;
 
 })( facebook || {} );
+
+
+var twitter = (function(o){
+
+	var $el , $tabbar;
+
+	var bindEvent = function(){
+		$tabbar.on("click" , "li" , function(){		
+			$tabbar.find("li").removeClass("selected");
+			$(this).toggleClass("selected");			
+		});
+	}
+
+	o.init = function(){
+		$el = $(".twitter");
+		$tabbar = $el.find(".tabbar");
+		bindEvent();
+	}
+
+	return o;
+})( twitter || {} );
 
 
 
