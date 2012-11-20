@@ -49,61 +49,6 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6b6b6b', endColorstr='#282828',GradientType=0 );
 }
 
- .appContent.youtube .dashBoard{
- 	background: url(img/dashboard.png);
- }
-
-.appContent.youtube .dashBoard .dashBoardTitle{
-	margin: 5px auto;
-	padding: 10px 20px 0px 20px;
-	position: relative;
-}
-
-.appContent.youtube .dashBoard .dashBoardTitle .thumbnail{
-	border-radius: 50%;
-}
-
-.appContent.youtube .dashBoard .dashBoardTitle .name{	
-	position: absolute;
-	top: 20px;
-	left: 90px;
-	font-size: 24px;
-	color: #fff;	
-	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
-}
-
-.appContent.youtube .dashBoard .simple-icon-list{
-	width: 280px;
-	margin: 5px 0px;
-	border-radius: 0;
-	background: transparent;
-	box-shadow: 0 0 0 0 #000;
-	border-top: 1px solid rgba(0,0,0,0.6);
-	border-bottom: 0px;
-}
-
-.appContent.youtube .dashBoard .simple-icon-list li{
-	border-top: 1px solid rgba(255,255,255,0.15);
-	border-bottom: 1px solid rgba(0,0,0,0.6);
-	border-radius: 0;
-}
-.appContent.youtube .dashBoard .simple-icon-list li:active{
-	background :#fff;
-}
-
-.appContent.youtube .dashBoard .simple-icon-list li:last-child{
-	border-bottom: 0px;
-}
-
-.appContent.youtube .dashBoard .simple-icon-list a{
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
-}
-.appContent.youtube .dashBoard .simple-icon-list li:active a{
-	color: #111;
-	text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
-}
-
 
 .appContent .openSelectMenuButton{	
 	display: block;

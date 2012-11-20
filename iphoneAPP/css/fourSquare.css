@@ -8,7 +8,8 @@
 	background: url(img/fourSquareHeader.png);	
 	width: 100%;
 	border-bottom: 1px solid #530000;
-	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.4);
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.4),
+		inset 0 -20px 50px -5px rgba(0,0,0,0.4);
 }
 
 

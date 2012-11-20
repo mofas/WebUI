@@ -5,6 +5,7 @@
 $(document).ready(function() {
 	facebook.init();
 	youtube.init();
+	pair.init();
 	twitter.init();
 	fourSquare.init();
 });
@@ -63,7 +64,7 @@ var youtube = (function(o){
 
 	var $el , $mainBoard , $selectMenu ,$openSelectMenuButton;
 
-	var touchInitX = 0 , touchMoveX = 0 , touchDiff;
+	var touchInitX = 0 , touchMoveX = 0 , touchDiff = 0;
 	var threshold = 100 , touchTimer;
 
 	var dashBoardOpen = false;
@@ -88,7 +89,9 @@ var youtube = (function(o){
 		});
 
 		$mainBoard[0].addEventListener("touchstart", function(e){			
+			clearTimeout(touchTimer);
 			touchInitX = e.changedTouches[0].clientX;
+			touchDiff = 0;			
 			touchTimer = setInterval( touchAnimation , 20);
 		});
 
@@ -99,6 +102,12 @@ var youtube = (function(o){
 
 		$mainBoard[0].addEventListener("touchend", function(e){	
 			clearTimeout(touchTimer);
+			touchMoveX = e.changedTouches[0].clientX;
+			touchDiff = touchMoveX-touchInitX;
+			//Click
+			if(touchDiff === 0){				
+				return;
+			}
 			if(touchDiff > threshold && !dashBoardOpen){
 				openDashBoard();
 			}
@@ -117,6 +126,7 @@ var youtube = (function(o){
 	}
 
 	var touchAnimation = function(){
+
 		if(!dashBoardOpen){
 			if(touchDiff < 0 )
 				touchDiff = 0;
@@ -124,7 +134,9 @@ var youtube = (function(o){
 				left: touchDiff
 			});
 		}
-		else{
+		else{			
+			if(touchDiff < -280)
+				touchDiff = -280;
 			$mainBoard.css({
 				left: 280 + touchDiff
 			});
@@ -132,12 +144,12 @@ var youtube = (function(o){
 		
 	}
 
-
 	var openDashBoard = function(){
 		$mainBoard.animate({
 			left: 280,
 		}, 300 , 'easeOutExpo');
 		dashBoardOpen = true;
+		clearTimeout(touchTimer);
 	}
 
 	var closeDashBoard = function(){
@@ -145,10 +157,113 @@ var youtube = (function(o){
 			left: 0,
 		}, 300 , 'easeOutExpo');
 		dashBoardOpen = false;
+		clearTimeout(touchTimer);
 	}
 
 	return o;
 })( youtube || {} );
+
+
+var pair = (function(o){
+
+	var $el , $mainBoard , $leftButton;
+
+	var touchInitX = 0 , touchMoveX = 0 , touchDiff = 0;
+	var threshold = 100 , touchTimer;
+
+	var dashBoardOpen = true;	
+
+	o.init = function(){
+		$el = $(".pair");
+		$mainBoard = $el.find(".mainBoard");				
+		$leftButton = $el.find(".leftButton");
+		bindEvent();
+	}
+
+	var bindEvent = function(){
+		$mainBoard[0].addEventListener("touchstart", function(e){
+			clearTimeout(touchTimer);
+			touchInitX = e.changedTouches[0].clientX;
+			touchDiff = 0;
+			touchTimer = setInterval( touchAnimation , 20);
+		});
+
+		$mainBoard[0].addEventListener("touchmove", function(e){
+			touchMoveX = e.changedTouches[0].clientX;
+			touchDiff = touchMoveX-touchInitX;
+		}, false);
+
+		$mainBoard[0].addEventListener("touchend", function(e){				
+			clearTimeout(touchTimer);
+			touchMoveX = e.changedTouches[0].clientX;
+			touchDiff = touchMoveX-touchInitX;
+			//Click
+			if(touchDiff === 0){				
+				return;
+			}
+			if(touchDiff > threshold && !dashBoardOpen){
+				openDashBoard();
+			}
+			else if(dashBoardOpen && touchDiff < -threshold){
+				closeDashBoard();
+			}
+			else if(dashBoardOpen && touchDiff > -threshold){
+				openDashBoard();
+			}
+			else{
+				closeDashBoard();
+			}
+		});
+
+		$leftButton.click(function(e){			
+			e.stopImmediatePropagation();			
+			e.preventDefault();			
+			if(!dashBoardOpen){
+				openDashBoard();
+			}
+			else{
+				closeDashBoard();
+			}			
+		});
+	}
+
+	var touchAnimation = function(){
+		if(!dashBoardOpen){			
+			if(touchDiff < 0 )
+				touchDiff = 0;
+			$mainBoard.css({
+				left: touchDiff
+			});
+		}
+		else{			
+			
+			if(touchDiff < -260)
+				touchDiff = -260;
+			$mainBoard.css({
+				left: 260 + touchDiff
+			});
+		}
+		
+	}
+
+	var openDashBoard = function(){
+		$mainBoard.animate({
+			left: 260,
+		}, 300 , 'easeOutExpo');
+		dashBoardOpen = true;
+		clearTimeout(touchTimer);
+	}
+
+	var closeDashBoard = function(){
+		$mainBoard.animate({
+			left: 0,
+		}, 300 , 'easeOutExpo');
+		dashBoardOpen = false;
+		clearTimeout(touchTimer);
+	}
+
+	return o;
+})( pair || {} );
 
 
 var fourSquare = (function(o){

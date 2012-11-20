@@ -1,0 +1,102 @@
+
+
+.appContent.pair{
+
+}
+.appContent.pair .mainBoard{
+	border-radius: 5px;
+	overflow: hidden;	
+	position: absolute;
+	background: #fff;
+	left: 260px;
+	z-index: 2;
+	box-shadow: 0 0 12px 2px rgba(0,0,0,0.9);
+}
+
+.appContent.pair .dashBoard{
+	width: 320px;
+	height: 480px;
+	position: absolute;
+	left: 0;	
+	z-index: 1;
+	background: url(img/dashboard.png);
+}
+
+.appContent.pair .header{
+	background: url(img/pairHeader.png);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
+}
+
+.appContent .header .leftButton {
+	box-shadow: 0 1px 0 0 rgba(255,255,255,0.4),
+				inset 0 1px 0 0 rgba(255,255,255,0.1),
+				inset 0 -20px 30px -10px rgba(0,0,0,0.4);
+}
+
+.appContent.pair .header .leftButton img {
+	display: block;
+	margin: 1px auto;
+}
+
+.appContent.pair .content{
+	width: 280px;
+	height: 398px;
+	padding: 20px;	
+	text-align: center;
+	font-size: 40px;
+	line-height: 320px;
+	text-shadow: 0 -1px 0 #fff;
+}
+
+
+.appContent.pair .dashBoard .dashBoardTitle{
+	margin: 5px auto;
+	padding: 10px 20px 0px 20px;
+	position: relative;
+}
+
+.appContent.pair .dashBoard .dashBoardTitle .thumbnail{
+	border-radius: 50%;
+}
+
+.appContent.pair .dashBoard .dashBoardTitle .name{	
+	position: absolute;
+	top: 20px;
+	left: 90px;
+	font-size: 24px;
+	color: #fff;	
+	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+}
+
+.appContent.pair .dashBoard .simple-icon-list{
+	width: 320px;
+	margin: 5px 0px;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: 0 0 0 0 #000;
+	border-top: 1px solid rgba(0,0,0,0.6);
+	border-bottom: 0px;
+}
+
+.appContent.pair .dashBoard .simple-icon-list li{
+	width: 320px;
+	border-top: 1px solid rgba(255,255,255,0.15);
+	border-bottom: 1px solid rgba(0,0,0,0.6);
+	border-radius: 0;
+}
+.appContent.pair .dashBoard .simple-icon-list li:active{
+	background :#fff;
+}
+
+.appContent.pair .dashBoard .simple-icon-list li:last-child{
+	border-bottom: 0px;
+}
+
+.appContent.pair .dashBoard .simple-icon-list a{
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0,0,0,0.8);
+}
+.appContent.pair .dashBoard .simple-icon-list li:active a{
+	color: #111;
+	text-shadow: 0 -1px 0 rgba(255,255,255,0.8);
+}

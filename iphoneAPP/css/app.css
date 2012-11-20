@@ -81,7 +81,7 @@ body{
 }
 
 .appContent .header .button{
-	margin: 6px 5px;
+	margin: 6px 8px;
 
 	border: 1px solid #333;
 	border-radius: 5px;
@@ -246,7 +246,7 @@ body{
 	text-decoration: none;
 	color: #333;
 	font-size: 16px;	
-	background: url(img/arrowR.svg) no-repeat 100% 50%;
+	background: url(img/arrowR.svg) no-repeat 220px 50%;
 }
 
 .appContent .simple-icon-list li:active a{
