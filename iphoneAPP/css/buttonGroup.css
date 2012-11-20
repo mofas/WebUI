@@ -5,14 +5,14 @@
 }
 
 .appContent.buttonGroup .header{
-	background: rgb(161,187,213);
-	background: -moz-linear-gradient(top,  rgba(161,187,213,1) 0%, rgba(140,172,204,1) 50%, rgba(121,156,189,1) 51%, rgba(66,108,152,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,187,213,1)), color-stop(50%,rgba(140,172,204,1)), color-stop(51%,rgba(121,156,189,1)), color-stop(100%,rgba(66,108,152,1)));
-	background: -webkit-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: -o-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: linear-gradient(to bottom,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1bbd5', endColorstr='#426c98',GradientType=0 );
+	background: rgb(170,183,200);
+	background: -moz-linear-gradient(top,  rgba(170,183,200,1) 0%, rgba(141,157,182,1) 50%, rgba(126,146,171,1) 51%, rgba(112,135,163,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,183,200,1)), color-stop(50%,rgba(141,157,182,1)), color-stop(51%,rgba(126,146,171,1)), color-stop(100%,rgba(112,135,163,1)));
+	background: -webkit-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: -o-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: linear-gradient(to bottom,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab7c8', endColorstr='#7087a3',GradientType=0 );
 	height: 46px;	
 	border-top: 1px solid rgba(255,255,255,0.6);
 }
@@ -32,14 +32,14 @@
 
 .appContent.buttonGroup .header .button{
 	height: 32px;
-	background: rgb(116,161,238);
-	background: -moz-linear-gradient(top,  rgba(116,161,238,1) 0%, rgba(86,128,200,1) 50%, rgba(79,115,201,1) 51%, rgba(63,109,187,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(116,161,238,1)), color-stop(50%,rgba(86,128,200,1)), color-stop(51%,rgba(79,115,201,1)), color-stop(100%,rgba(63,109,187,1)));
-	background: -webkit-linear-gradient(top,  rgba(116,161,238,1) 0%,rgba(86,128,200,1) 50%,rgba(79,115,201,1) 51%,rgba(63,109,187,1) 100%);
-	background: -o-linear-gradient(top,  rgba(116,161,238,1) 0%,rgba(86,128,200,1) 50%,rgba(79,115,201,1) 51%,rgba(63,109,187,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(116,161,238,1) 0%,rgba(86,128,200,1) 50%,rgba(79,115,201,1) 51%,rgba(63,109,187,1) 100%);
-	background: linear-gradient(to bottom,  rgba(116,161,238,1) 0%,rgba(86,128,200,1) 50%,rgba(79,115,201,1) 51%,rgba(63,109,187,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#74a1ee', endColorstr='#3f6dbb',GradientType=0 );
+	background: rgb(130,154,184);
+	background: -moz-linear-gradient(top,  rgba(130,154,184,1) 0%, rgba(92,121,163,1) 50%, rgba(72,106,154,1) 51%, rgba(72,106,155,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(130,154,184,1)), color-stop(50%,rgba(92,121,163,1)), color-stop(51%,rgba(72,106,154,1)), color-stop(100%,rgba(72,106,155,1)));
+	background: -webkit-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: -o-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: linear-gradient(to bottom,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#829ab8', endColorstr='#486a9b',GradientType=0 );
 }
 
 .appContent.buttonGroup .header .button img{
@@ -114,26 +114,27 @@
 
 
 
-.appContent .blueWrap{
-	background: rgb(160,177,193);
-	background: -moz-linear-gradient(top,  rgba(160,177,193,1) 0%, rgba(66,108,152,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(160,177,193,1)), color-stop(100%,rgba(66,108,152,1)));
-	background: -webkit-linear-gradient(top,  rgba(160,177,193,1) 0%,rgba(66,108,152,1) 100%);
-	background: -o-linear-gradient(top,  rgba(160,177,193,1) 0%,rgba(66,108,152,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(160,177,193,1) 0%,rgba(66,108,152,1) 100%);
-	background: linear-gradient(to bottom,  rgba(160,177,193,1) 0%,rgba(66,108,152,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a0b1c1', endColorstr='#426c98',GradientType=0 );
+.appContent .blueWrap , .appContent .blueWrap .button{
+	background: rgb(170,183,200);
+	background: -moz-linear-gradient(top,  rgba(170,183,200,1) 0%, rgba(141,157,182,1) 50%, rgba(126,146,171,1) 51%, rgba(112,135,163,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(170,183,200,1)), color-stop(50%,rgba(141,157,182,1)), color-stop(51%,rgba(126,146,171,1)), color-stop(100%,rgba(112,135,163,1)));
+	background: -webkit-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: -o-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	background: linear-gradient(to bottom,  rgba(170,183,200,1) 0%,rgba(141,157,182,1) 50%,rgba(126,146,171,1) 51%,rgba(112,135,163,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aab7c8', endColorstr='#7087a3',GradientType=0 );
 }
 
-.appContent .blueWrap .button{
-	background: rgb(161,187,213);
-	background: -moz-linear-gradient(top,  rgba(161,187,213,1) 0%, rgba(140,172,204,1) 50%, rgba(121,156,189,1) 51%, rgba(66,108,152,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(161,187,213,1)), color-stop(50%,rgba(140,172,204,1)), color-stop(51%,rgba(121,156,189,1)), color-stop(100%,rgba(66,108,152,1)));
-	background: -webkit-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: -o-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	background: linear-gradient(to bottom,  rgba(161,187,213,1) 0%,rgba(140,172,204,1) 50%,rgba(121,156,189,1) 51%,rgba(66,108,152,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a1bbd5', endColorstr='#426c98',GradientType=0 );
+.appContent .blueWrap .button:active{
+	background: rgb(130,154,184);
+	background: -moz-linear-gradient(top,  rgba(130,154,184,1) 0%, rgba(92,121,163,1) 50%, rgba(72,106,154,1) 51%, rgba(72,106,155,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(130,154,184,1)), color-stop(50%,rgba(92,121,163,1)), color-stop(51%,rgba(72,106,154,1)), color-stop(100%,rgba(72,106,155,1)));
+	background: -webkit-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: -o-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	background: linear-gradient(to bottom,  rgba(130,154,184,1) 0%,rgba(92,121,163,1) 50%,rgba(72,106,154,1) 51%,rgba(72,106,155,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#829ab8', endColorstr='#486a9b',GradientType=0 );
+
 }
 
 .appContent .brownWrap{

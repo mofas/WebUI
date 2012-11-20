@@ -6,6 +6,7 @@ $(document).ready(function() {
 	facebook.init();
 	youtube.init();
 	twitter.init();
+	fourSquare.init();
 });
 
 
@@ -88,7 +89,7 @@ var youtube = (function(o){
 
 		$mainBoard[0].addEventListener("touchstart", function(e){			
 			touchInitX = e.changedTouches[0].clientX;
-			touchTimer = setInterval( touchAnimation , 50);
+			touchTimer = setInterval( touchAnimation , 20);
 		});
 
 		$mainBoard[0].addEventListener("touchmove", function(e){
@@ -148,3 +149,28 @@ var youtube = (function(o){
 
 	return o;
 })( youtube || {} );
+
+
+var fourSquare = (function(o){
+
+    o.init = function(){
+	    //default location
+	    o.latlng = new google.maps.LatLng(51.538902, -0.015782);    
+	    o.myOptions = {
+	        zoom: 12,     
+	        center: o.latlng,
+	        disableDefaultUI: true,                                
+	        mapTypeId: google.maps.MapTypeId.ROADMAP
+	    }
+    	o.map = new google.maps.Map(document.getElementById("map"), o.myOptions);    
+    	o.marker = new google.maps.Marker({
+            position:  o.latlng,
+            map: o.map,                        
+            icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/green-dot.png' ,
+        });	
+	}
+
+
+
+	return o;
+})( fourSquare || {} );

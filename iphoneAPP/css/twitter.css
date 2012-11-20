@@ -5,28 +5,27 @@
 }
 
 .twitter .header{
-	background: rgb(45,173,220);
-	background: -moz-linear-gradient(top,  rgba(45,173,220,1) 0%, rgba(2,113,191,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(45,173,220,1)), color-stop(100%,rgba(2,113,191,1)));
-	background: -webkit-linear-gradient(top,  rgba(45,173,220,1) 0%,rgba(2,113,191,1) 100%);
-	background: -o-linear-gradient(top,  rgba(45,173,220,1) 0%,rgba(2,113,191,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(45,173,220,1) 0%,rgba(2,113,191,1) 100%);
-	background: linear-gradient(to bottom,  rgba(45,173,220,1) 0%,rgba(2,113,191,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2daddc', endColorstr='#0271bf',GradientType=0 );
+	background: rgb(90,170,227);
+	background: -moz-linear-gradient(top,  rgba(90,170,227,1) 0%, rgba(38,121,180,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(90,170,227,1)), color-stop(100%,rgba(38,121,180,1)));
+	background: -webkit-linear-gradient(top,  rgba(90,170,227,1) 0%,rgba(38,121,180,1) 100%);
+	background: -o-linear-gradient(top,  rgba(90,170,227,1) 0%,rgba(38,121,180,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(90,170,227,1) 0%,rgba(38,121,180,1) 100%);
+	background: linear-gradient(to bottom,  rgba(90,170,227,1) 0%,rgba(38,121,180,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5aaae3', endColorstr='#2679b4',GradientType=0 );
 	border-bottom: 2px solid rgba(0, 66, 112, 1);
 }
 
 .twitter .header .button{
-	background: rgb(0,158,216);
-	background: -moz-linear-gradient(top,  rgba(0,158,216,1) 1%, rgba(0,85,150,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(0,158,216,1)), color-stop(100%,rgba(0,85,150,1)));
-	background: -webkit-linear-gradient(top,  rgba(0,158,216,1) 1%,rgba(0,85,150,1) 100%);
-	background: -o-linear-gradient(top,  rgba(0,158,216,1) 1%,rgba(0,85,150,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(0,158,216,1) 1%,rgba(0,85,150,1) 100%);
-	background: linear-gradient(to bottom,  rgba(0,158,216,1) 1%,rgba(0,85,150,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ed8', endColorstr='#005596',GradientType=0 );
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3),
- 				inset 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+	background: rgb(72,145,200);
+	background: -moz-linear-gradient(top,  rgba(72,145,200,1) 0%, rgba(18,97,156,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(72,145,200,1)), color-stop(100%,rgba(18,97,156,1)));
+	background: -webkit-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
+	background: -o-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
+	background: linear-gradient(to bottom,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4891c8', endColorstr='#12619c',GradientType=0 );
+	
 }
 
 .appContent.twitter .header .backButton{		

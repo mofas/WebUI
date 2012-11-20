@@ -1,0 +1,93 @@
+
+.appContent.fourSquare{
+
+}
+
+
+.appContent.fourSquare .header{
+	background: url(img/fourSquareHeader.png);	
+	width: 100%;
+	border-bottom: 1px solid #530000;
+	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.4);
+}
+
+
+.appContent.fourSquare .header .leftButton span{
+	display: block;
+	margin: 6px auto;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: 0 -1px 0 #333;
+}
+
+.appContent.fourSquare .map{
+	width: 100%;
+	height: 140px;
+	border-bottom: 1px solid #222;	
+}
+
+.appContent.fourSquare .mainContent{	
+	width: 300px;
+	height: 276px;
+	background : url(img/sand.jpg);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;	
+	border-top: 1px solid rgba(255,255,255,0.4);
+	padding: 10px;
+	font-family: 'Gudea', sans-serif;
+}
+
+.appContent.fourSquare .mainContent .title{
+	padding-left: 10px;
+	font-size: 20px;
+	color: #a19c94;
+	text-shadow: 0 1px 0 #fff;	
+}
+
+.appContent.fourSquare .mainContent .box{
+	width: 280px;
+	margin: 5px auto 15px auto;	
+	background: #fff;
+	box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2) , 0 0 1px 0 rgba(0,0,0,0.4);
+	border-radius: 10px;
+}
+.appContent.fourSquare .mainContent .box .icon{
+	float:left;
+	position: relative;
+	top: -5px;
+}
+.appContent.fourSquare .mainContent .box a{	
+	padding: 15px 15px 15px 5px;
+	display: block;
+	background: url(img/arrowR.svg) no-repeat 95% 50%;
+	color: #333;	
+	font-size: 12px;
+	border-bottom : 1px solid #ddd;
+}
+.appContent.fourSquare .mainContent .box a:last-child{
+	border-bottom: 0px;
+}
+.appContent.fourSquare .mainContent .box .count{
+	float: left;
+	margin-left: 10px;
+	font-size: 28px;	
+	padding: 5px 0;
+	color: #999;	
+}
+.appContent.fourSquare .mainContent .box .thumbnail{
+	width: 40px;
+	border-radius: 10px;
+	border: 1px solid #aaa;
+	margin-left: 10px;
+	margin-right: 15px;
+	float: left;	
+}
+
+.appContent.fourSquare .mainContent .box a .title{
+	color: #333;
+}
+
+.appContent.fourSquare .mainContent .box a .sub{
+	color: #aaa;
+}

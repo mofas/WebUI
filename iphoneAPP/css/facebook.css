@@ -303,6 +303,7 @@
 	background: #fff;
 	border-radius: 5px;
 	overflow: hidden;
+	overflow-y: scroll;
 	max-height: 345px;
 }
 

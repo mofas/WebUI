@@ -16,8 +16,8 @@
  </g>
  <defs>
   <linearGradient id="svg_8" x1="0" y1="0" x2="0" y2="1">
-   <stop offset="0" stop-color="#11aae1"/>
-   <stop offset="1" stop-color="#0177cb"/>
+   <stop offset="0" stop-color="#4891c8"/>
+   <stop offset="1" stop-color="#12619c"/>
   </linearGradient>
   <radialGradient id="svg_9" cx="0.5" cy="0.5" r="0.5">
    <stop offset="0" stop-color="#ffffff"/>
