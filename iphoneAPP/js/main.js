@@ -62,7 +62,7 @@ var twitter = (function(o){
 
 var youtube = (function(o){
 
-	var $el , $mainBoard , $selectMenu ,$openSelectMenuButton;
+	var $el , $mainBoard , $leftButton , $dashBoard , $selectMenu ,$openSelectMenuButton;
 
 	var touchInitX = 0 , touchMoveX = 0 , touchDiff = 0;
 	var threshold = 100 , touchTimer;
@@ -72,12 +72,19 @@ var youtube = (function(o){
 	o.init = function(){
 		$el = $(".youtube");
 		$mainBoard = $el.find(".mainBoard");
+		$dashBoard = $el.find(".dashBoard");
+		$leftButton = $el.find(".leftButton");
 		$openSelectMenuButton = $el.find(".openSelectMenuButton");
 		$selectMenu = $el.find(".selectMenu");
 		bindEvent();
 	}
 
 	var bindEvent = function(){
+
+		$dashBoard.on("click" , ".list li" , function(){
+			$dashBoard.find(".list li").removeClass("selected");
+			$(this).addClass("selected");
+		});
 		$openSelectMenuButton.on("click" , function(e){
 			e.preventDefault();
 			$selectMenu.removeClass("hide");
@@ -120,6 +127,17 @@ var youtube = (function(o){
 			else{
 				closeDashBoard();
 			}
+		});
+
+		$leftButton.click(function(e){			
+			e.stopImmediatePropagation();			
+			e.preventDefault();			
+			if(!dashBoardOpen){
+				openDashBoard();
+			}
+			else{
+				closeDashBoard();
+			}			
 		});
 
 
@@ -196,8 +214,7 @@ var pair = (function(o){
 		$mainBoard[0].addEventListener("touchend", function(e){				
 			clearTimeout(touchTimer);
 			touchMoveX = e.changedTouches[0].clientX;
-			touchDiff = touchMoveX-touchInitX;
-			//Click
+			touchDiff = touchMoveX-touchInitX;			
 			if(touchDiff === 0){				
 				return;
 			}

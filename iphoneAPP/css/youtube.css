@@ -1,4 +1,4 @@
-
+	
 
 
 .appContent.youtube{
@@ -17,6 +17,9 @@
 	background: #333;
 }
 
+.appContent .header .leftButton{
+	box-shadow: 0 0 0 0 #fff;
+}
 .appContent.youtube .youtubeIcon{
 	display: block;
 	margin: 0 auto;
@@ -27,13 +30,14 @@
 .appContent.youtube .mainBoard , .appContent.youtube .dashBoard{
 	position: absolute;
 	width: 100%;
-	height: 440px;
+	height: 480px;
 	left: 0;
-	top: 42px;	
+	top: 0;	
+	background: #fff;
+	border-radius: 5px;
 }
 
-.appContent.youtube .mainBoard{
-	
+.appContent.youtube .mainBoard{	
 	box-shadow: -4px 0 6px -1px rgba(0,0,0,0.8),
 				0 0 0 1px rgba(0,0,0,0.6);
 
@@ -110,6 +114,7 @@
 	border-top: 1px solid #fff;
 	height: 416px;
 	padding: 10px 0;
+	bottom: -44px;
 
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -135,7 +140,7 @@
 }
 
 .appContent .selectMenu.hide{
-	bottom: -450px;
+	bottom: -480px;
 }
 
 
@@ -210,3 +215,75 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#0a0809',GradientType=0 );
 }
 
+.appContent.youtube .dashBoard{
+	font-family: 'Gudea', sans-serif;
+
+}
+
+
+.appContent.youtube .dashBoard .title{
+	padding: 6px 10px;
+	background: url(img/youtubeDashBoardTitle.png);
+	color: #fff;	
+	font-size: 14px;	
+	letter-spacing: 1px;
+	box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.4),
+				inset 0 -1px 0 0 rgba(0,0,0,0.4);
+}
+
+.appContent.youtube .dashBoard .title:first-child{
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.appContent.youtube .dashBoard ul.list{
+	border-top: 1px solid #222;
+	border-bottom: 1px solid #222;
+	background : #bc413b;
+}
+
+.appContent.youtube .dashBoard ul.list li{		
+	border-bottom: 1px solid #222;
+	border-top: 1px solid #444;
+	background : #333;
+}
+.appContent.youtube .dashBoard ul.list .selected{
+	margin-left: 4px;
+	background : #222;
+}
+.appContent.youtube .dashBoard ul.list a{	
+	font-size: 14px;
+	color: #999;
+	display: block;
+	padding: 15px 10px;
+}
+.appContent.youtube .dashBoard ul.list .selected a{
+	color: #fff;
+}
+.appContent.youtube .dashBoard ul.list .icon{
+	float:left;
+}
+
+.appContent.youtube .dashBoard ul.list .thumbnail{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: #fff;
+	margin-top: -12px;
+}
+
+.appContent.youtube .dashBoard ul.list .icon.active{
+	display:none;
+}
+
+.appContent.youtube .dashBoard ul.list a > span{
+	margin-left: 10px;
+}
+
+.appContent.youtube .dashBoard ul.list .selected .icon{
+	display: none;
+}
+
+.appContent.youtube .dashBoard ul.list .selected .icon.active{
+	display: inherit;
+}

@@ -27,7 +27,7 @@
 	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.4);
 }
 
-.appContent .header .leftButton {
+.appContent.pair .header .leftButton {
 	box-shadow: 0 1px 0 0 rgba(255,255,255,0.4),
 				inset 0 1px 0 0 rgba(255,255,255,0.1),
 				inset 0 -20px 30px -10px rgba(0,0,0,0.4);
