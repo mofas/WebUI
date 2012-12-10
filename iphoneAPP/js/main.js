@@ -1,5 +1,8 @@
 
 
+window.addEventListener('load', function() {
+    new FastClick(document.body);
+}, false);
 
 
 $(document).ready(function() {
@@ -153,10 +156,10 @@ var youtube = (function(o){
 			});
 		}
 		else{			
-			if(touchDiff < -280)
-				touchDiff = -280;
+			if(touchDiff < -260)
+				touchDiff = -260;
 			$mainBoard.css({
-				left: 280 + touchDiff
+				left: 260 + touchDiff
 			});
 		}
 		
@@ -164,7 +167,7 @@ var youtube = (function(o){
 
 	var openDashBoard = function(){
 		$mainBoard.animate({
-			left: 280,
+			left: 260,
 		}, 300 , 'easeOutExpo');
 		dashBoardOpen = true;
 		clearTimeout(touchTimer);

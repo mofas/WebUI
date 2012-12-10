@@ -17,13 +17,20 @@
 	background: #333;
 }
 
-.appContent .header .leftButton{
-	box-shadow: 0 0 0 0 #fff;
+.appContent.youtube .header .button{
+	border: 0px;
+	box-shadow: 0 0 0 0;
 }
+
+.appContent.youtube .header .button img {
+	margin-top: 1px auto;
+}
+
 .appContent.youtube .youtubeIcon{
-	display: block;
-	margin: 0 auto;
-	height: 50px;
+	position: absolute;		
+	left: 116px;
+	top: 6px;
+	height: 32px;
 }
 
 

@@ -14,78 +14,31 @@
 	background: linear-gradient(to bottom,  rgba(90,170,227,1) 0%,rgba(38,121,180,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5aaae3', endColorstr='#2679b4',GradientType=0 );
 	border-bottom: 2px solid rgba(0, 66, 112, 1);
+	height: 46px;
 }
 
 .twitter .header .button{
-	background: rgb(72,145,200);
-	background: -moz-linear-gradient(top,  rgba(72,145,200,1) 0%, rgba(18,97,156,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(72,145,200,1)), color-stop(100%,rgba(18,97,156,1)));
-	background: -webkit-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
-	background: -o-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
-	background: -ms-linear-gradient(top,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
-	background: linear-gradient(to bottom,  rgba(72,145,200,1) 0%,rgba(18,97,156,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4891c8', endColorstr='#12619c',GradientType=0 );
-	
+	height: 32px;
+	width: 46px;
+	background: rgb(72,147,202);
+	background: -moz-linear-gradient(top,  rgba(72,147,202,1) 0%, rgba(45,120,175,1) 50%, rgba(32,109,164,1) 51%, rgba(18,96,151,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(72,147,202,1)), color-stop(50%,rgba(45,120,175,1)), color-stop(51%,rgba(32,109,164,1)), color-stop(100%,rgba(18,96,151,1)));
+	background: -webkit-linear-gradient(top,  rgba(72,147,202,1) 0%,rgba(45,120,175,1) 50%,rgba(32,109,164,1) 51%,rgba(18,96,151,1) 100%);
+	background: -o-linear-gradient(top,  rgba(72,147,202,1) 0%,rgba(45,120,175,1) 50%,rgba(32,109,164,1) 51%,rgba(18,96,151,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(72,147,202,1) 0%,rgba(45,120,175,1) 50%,rgba(32,109,164,1) 51%,rgba(18,96,151,1) 100%);
+	background: linear-gradient(to bottom,  rgba(72,147,202,1) 0%,rgba(45,120,175,1) 50%,rgba(32,109,164,1) 51%,rgba(18,96,151,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4893ca', endColorstr='#126097',GradientType=0 );
+	border: 1px solid rgba(0,0,0,0.4);
 }
 
-.appContent.twitter .header .backButton{		
-	margin-left: 18px;
-	margin-top: 6px;
-
-	color: #fff;
-	text-decoration: none;
-	font-size: 14px;
-	line-height: 18px;
-	font-family: 'Average Sans', sans-serif;
-	font-weight: bold;
-
-	display: inline-block;
-	padding: 5px 8px;
-	border-radius: 5px;
-
-	position: relative;	
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,158,216,1)), to(rgba(0,85,150,1)));
-	border: solid 1px #333;
-	border-left: 0px solid #333;
-
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.6);	
-	box-shadow:  0 1px 0 rgba(255,255,255,0.4),
-				inset 0 1px 2px 0 rgba(0,0,0,0.4);
-}
-
-
-.appContent.twitter .header .backButton > span {	
-	border-left: solid 1px #333;
-	border-bottom: solid 1px #333;
-	border-top-left-radius: 6px;
-	border-bottom-right-radius: 6px;
-	height: 22px;
-	width: 19px;
-	display: inline-block;
-
-	background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0,158,216,1)), to(rgba(0,85,150,1)));
-	-webkit-transform: rotate(45deg);
-	-webkit-mask-image: -webkit-gradient(linear, left bottom, right top, 
-		from(#000000), 
-		color-stop(0.5,#fff), 
-		color-stop(0.5, transparent), 
-		to(transparent));
-
-	position: absolute;
-	left: -8px;
-	top: 2px;
-	-webkit-background-clip: content;
-	box-shadow: 0 1px 0 0 rgba(255,255,255,0.4);
-}
-
-.appContent.twitter .header .leftButton{		
-	padding-bottom: 5px;
-}
 
 .appContent.twitter .header .button img{
-	margin-top: 0px;
-	margin-left: 7px;
+	margin-top: 2px;
+	margin-left: 5px;
 	display: block;
+}
+.appContent.twitter .header .centerText img{
+	margin-top: 3px;
 }
 
 .appContent.twitter .searchWrap{
