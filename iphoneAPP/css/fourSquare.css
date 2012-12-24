@@ -9,17 +9,17 @@
 	width: 100%;
 	border-bottom: 1px solid #530000;
 	box-shadow: 0 1px 1px 0 rgba(0,0,0,0.4),
-		inset 0 -20px 50px -5px rgba(0,0,0,0.4);
+		inset 0 -20px 30px -5px rgba(0,0,0,0.2);
 }
 
 
-.appContent.fourSquare .header .leftButton span{
-	display: block;
-	margin: 6px auto;
-	text-align: center;
-	color: #fff;
-	font-size: 14px;
-	text-shadow: 0 -1px 0 #333;
+.appContent.fourSquare .header .leftButton{
+	box-shadow: 0 0 0 0;
+	border: 0px;
+}
+.appContent.fourSquare .header .leftButton img{
+	margin-top: 0;
+	height: 30px;
 }
 
 .appContent.fourSquare .map{
