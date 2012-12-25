@@ -191,6 +191,10 @@ var doubleHelix = (function(o){
 			if( particle.y <= particle.targetY){
 				particle.vy += acceleration*distance;
 			}
+
+			//velocity limit 
+			(particle.vx > 1) ? particle.vx = 1 : particle.vx = particle.vx;
+			(particle.vy > 1) ? particle.vy = 1 : particle.vy = particle.vy;
 			
 			//calculate next position
 			particle.x = particle.x + particle.vx;
