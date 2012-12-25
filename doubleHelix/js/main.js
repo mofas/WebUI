@@ -31,9 +31,9 @@ var doubleHelix = (function(o){
 		phase = 0;
 
 	var particles = [],
-		particleDistance = 20,
+		particleDistance = 25,
 		helixArrayLength;
-
+	
 	var resize = function(){
 		W = window.innerWidth;
 		H = window.innerHeight;
@@ -43,10 +43,9 @@ var doubleHelix = (function(o){
 		ctx.fillRect(0,0,W,H);
 		amplitude = W/6;
 		helixArrayLength = Math.floor(H/particleDistance) + 25;
-
+		
+		particles = [];
 		initParticle();
-		helixUpdate();
-		particlesAnimation();
 	}
 
 
@@ -59,11 +58,10 @@ var doubleHelix = (function(o){
 
 	var HelixParticleUpdate = function(){		
 
-		clearCanvas();
+		//clearCanvas();
 
-		ctx.beginPath();
-		ctx.fillStyle = "#000" ;
-
+		//ctx.beginPath();
+		//ctx.fillStyle = "#000" ;
 
 		var originX = 0, originY = 0, x , y;
 		var particle;				
@@ -76,8 +74,8 @@ var doubleHelix = (function(o){
 			x = rf[0];
 			y = rf[1];
 
-			ctx.moveTo(x , y);
-			ctx.arc(x , y , 5 , 0 , Math.PI*2, true);
+			//ctx.moveTo(x , y);
+			//ctx.arc(x , y , 5 , 0 , Math.PI*2, true);
 			
 			particle.targetX = x;
 			particle.targetY = y;			
@@ -92,14 +90,14 @@ var doubleHelix = (function(o){
 			x = rf[0];
 			y = rf[1];		
 
-			ctx.moveTo(x , y);
-			ctx.arc(x , y , 5 , 0 , Math.PI*2, true);	
+			//ctx.moveTo(x , y);
+			//ctx.arc(x , y , 5 , 0 , Math.PI*2, true);	
 			
 			particle.targetX = x;
 			particle.targetY = y;				
 		}
 
-		ctx.fill();
+		//ctx.fill();
 
 		phase += phaseVelocity;
 	}
@@ -107,7 +105,7 @@ var doubleHelix = (function(o){
 
 	var clearCanvas = function(){
 		ctx.beginPath();
-		ctx.fillStyle = "#fff";
+		ctx.fillStyle = "#eef";
 		ctx.fillRect(0,0,W,H);
 		ctx.fill();
 	}
@@ -164,22 +162,21 @@ var doubleHelix = (function(o){
 
 	}
 
-	var particlesAnimation = function(){
+	var particlesAnimation = function(){		
 		var acceleration = 0.002;
 		var distance;
+
 		clearCanvas();
+		drawLine();
+
 		ctx.beginPath();
-		ctx.fillStyle = "rgba(30, 30, 30, 1)";
+		ctx.fillStyle = "#555";
 		var particle;		
 		for(var i = 0 ; i < particles.length ; i++){			
 			particle = particles[i];
 			
 			//calculate velocity			
-			distance = Math.abs(particle.x - particle.targetX)/100;
-
-			if(i === 0)	{
-				console.log(distance);
-			}
+			distance = Math.abs(particle.x - particle.targetX)/100;			
 			if( particle.x >= particle.targetX){
 				particle.vx -= acceleration*distance;
 			}
@@ -202,16 +199,52 @@ var doubleHelix = (function(o){
 			ctx.moveTo(particle.x , particle.y);
 			ctx.arc(particle.x , particle.y , particle.r , 0 , Math.PI*2, true);
 		}
-		ctx.fill();
+		ctx.fill();		
 		requestAnimFrame(particlesAnimation);
 	}
+
+
+	var drawLine = function(){
+
+		var connection = function(particle1 , particle2){						
+			var yd = particle2.y - particle1.y;
+			var xd = particle2.x - particle1.x;
+			var distance = Math.sqrt(xd*xd + yd*yd);				
+			if(distance < 120){								
+				ctx.beginPath();
+				ctx.lineWidth = 0.5;
+				ctx.moveTo(particle1.x, particle1.y);
+				ctx.lineTo(particle2.x, particle2.y);
+				ctx.strokeStyle = "#aaa";
+				ctx.stroke();
+			}
+		}
+
+		for(var i = 0 ; i < particles.length; i++){
+			var p = particles[i];
+			if(i < helixArrayLength){
+				for(var n = i+1 ; n < helixArrayLength ; n++){				
+					var p2 = particles[n];				
+					connection(p , p2);
+				}
+			}
+			else{
+				for(var n = i+1 ; n < particles.length ; n++){				
+					var p2 = particles[n];				
+					connection(p , p2);
+				}
+			}
+		}
+	}
+
 
 	o.init = function(){
 		canvas = document.getElementById("canvas");
 		ctx = canvas.getContext("2d");		
 		$(window).on("resize" , resize);
 		resize();
-
+		particlesAnimation();
+		helixUpdate();
 	}
 
 	return o;
