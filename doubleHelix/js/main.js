@@ -77,8 +77,8 @@ var doubleHelix = (function(o){
 			//ctx.moveTo(x , y);
 			//ctx.arc(x , y , 5 , 0 , Math.PI*2, true);
 			
-			particle.targetX = x;
-			particle.targetY = y;			
+			particle.targetX = x + Math.random()*50;
+			particle.targetY = y  + Math.random()*50;
 		}
 			
 		for(var i =0; i <= helixArrayLength ; i+= 1){
@@ -93,8 +93,8 @@ var doubleHelix = (function(o){
 			//ctx.moveTo(x , y);
 			//ctx.arc(x , y , 5 , 0 , Math.PI*2, true);	
 			
-			particle.targetX = x;
-			particle.targetY = y;				
+			particle.targetX = x  + Math.random()*50;
+			particle.targetY = y  + Math.random()*50;
 		}
 
 		//ctx.fill();
@@ -142,7 +142,7 @@ var doubleHelix = (function(o){
 
 			particle = particles[i];
 			particle.x = x + Math.random()*100 - 50;
-			particle.y = y + Math.random()*100 - 50;
+			particle.y = y + Math.random()*10 - 5;
 		}		
 		for(var i =0; i <= helixArrayLength ; i+= 1){
 			//the baseLine
@@ -157,7 +157,7 @@ var doubleHelix = (function(o){
 
 			particle = particles[helixArrayLength+i];			
 			particle.x = x + Math.random()*100 - 50;
-			particle.y = y + Math.random()*100 - 50;
+			particle.y = y + Math.random()*10 - 5;
 		}
 
 	}
@@ -193,8 +193,10 @@ var doubleHelix = (function(o){
 			}
 
 			//velocity limit 
-			(particle.vx > 1) ? particle.vx = 1 : particle.vx = particle.vx;
-			(particle.vy > 1) ? particle.vy = 1 : particle.vy = particle.vy;
+			(particle.vx > 0.8) ? particle.vx = 0.8 : particle.vx = particle.vx;
+			(particle.vy > 0.8) ? particle.vy = 0.8 : particle.vy = particle.vy;
+			(particle.vx < -0.8) ? particle.vx = -0.8 : particle.vx = particle.vx;
+			(particle.vy < -0.8) ? particle.vy = -0.8 : particle.vy = particle.vy;
 			
 			//calculate next position
 			particle.x = particle.x + particle.vx;
@@ -214,15 +216,27 @@ var doubleHelix = (function(o){
 			var yd = particle2.y - particle1.y;
 			var xd = particle2.x - particle1.x;
 			var distance = Math.sqrt(xd*xd + yd*yd);				
-			if(distance < 120){								
+			if(distance < 120){				
 				ctx.beginPath();
-				ctx.lineWidth = 0.5;
+				if(distance < 30){					
+					ctx.strokeStyle = "rgba(170,170,170,1)";
+				}
+				else if(distance < 60){					
+					ctx.strokeStyle = "rgba(170,170,170,0.9)";
+				}
+				else if(distance < 90){
+					ctx.strokeStyle = "rgba(170,170,170,0.8)";	
+				}
+				else{					
+					ctx.strokeStyle = "rgba(170,170,170,0.7)";		
+				}
+				ctx.lineWidth = 0.5;			
 				ctx.moveTo(particle1.x, particle1.y);
 				ctx.lineTo(particle2.x, particle2.y);
-				ctx.strokeStyle = "#aaa";
-				ctx.stroke();
+				ctx.stroke();	
 			}
-		}
+
+		}		
 
 		for(var i = 0 ; i < particles.length; i++){
 			var p = particles[i];
@@ -239,6 +253,8 @@ var doubleHelix = (function(o){
 				}
 			}
 		}
+
+		
 	}
 
 
