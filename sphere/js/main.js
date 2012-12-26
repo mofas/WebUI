@@ -21,12 +21,9 @@ $(document).ready(function() {
 var sphere = (function(o){
 
 	var canvas , ctx , W , H;
-	var radius;
+	
 	var particles = [];
-
-	var warpLineNumber = 20,
-		weftLineNumber = 60;	
-
+	
 
 	var RADIAN = Math.PI*2/360;
 
@@ -34,25 +31,26 @@ var sphere = (function(o){
 	var _orientationAngle = {x: -45 , y: 45 , z: 0 };
 	var _position = {x: 0 , y: 0 , z: 0 };
 
-	var _cameraXF = 0.58,
-		_cameraYF = 0.58,
-		_cameraZF = 0.58,
-		_orientationAngleX = -45,
-		_orientationAngleY = 45,
-		_orientationAngleZ = -0,
-		_positionXF = 0.45,
-		_positionYF = 0.45,
-		_positionZF = 1.11;
+	o.radius = 300;
+	o.warpLineNumber = 20;
+	o.weftLineNumber = 60;	
+
+	o.cameraXF = 0.58;
+	o.cameraYF = 0.58;
+	o.cameraZF = 0.58;
+	o.orientationAngleX = -45;
+	o.orientationAngleY = -45;
+	o.orientationAngleZ = -90;
+	o.positionXF = 0.45;
+	o.positionYF = 0.45;
+	o.positionZF = 1.11;
 
 
 	var resize = function(){
 		W = window.innerWidth;
 		H = window.innerHeight;
 		canvas.width = W;
-		canvas.height = H;
-		//init value				
-		radius = Math.floor(Math.min(W,H)*0.3);
-
+		canvas.height = H;		
 		reDraw();
 	}
 
@@ -60,9 +58,9 @@ var sphere = (function(o){
 		ctx.fillStyle = "white"
 		ctx.fillRect(0,0,W,H);
 
-		_camera = {x: W*_cameraXF , y: W*_cameraYF , z:W*_cameraZF };
-		_orientationAngle = { x: _orientationAngleX , y: _orientationAngleY , z: _orientationAngleZ};
-		_position = {x: W*_positionXF , y: W*_positionYF , z: W*_positionZF };
+		_camera = {x: W*o.cameraXF , y: W*o.cameraYF , z:W*o.cameraZF };
+		_orientationAngle = { x: o.orientationAngleX , y: o.orientationAngleY , z: o.orientationAngleZ};
+		_position = {x: W*o.positionXF , y: W*o.positionYF , z: W*o.positionZF };
 
 		particles = [];
 		initParticle();
@@ -74,13 +72,13 @@ var sphere = (function(o){
 		var longtitudeAngle;
 		var latitudeAngle;		
 
-		for(var i = 0; i < warpLineNumber ; i++){	
-			latitudeAngle = (i+1)*(180/(warpLineNumber+1));			
-			for(var j = 0; j < weftLineNumber ; j++){
-				longtitudeAngle = j*(360/weftLineNumber);
-				var x = radius*Math.sin(RADIAN*latitudeAngle)*Math.sin(RADIAN*longtitudeAngle);
-				var y = radius*Math.sin(RADIAN*latitudeAngle)*Math.cos(RADIAN*longtitudeAngle);
-				var z = radius*Math.cos(RADIAN*latitudeAngle);				
+		for(var i = 0; i < o.warpLineNumber ; i++){	
+			latitudeAngle = (i+1)*(180/(o.warpLineNumber+1));			
+			for(var j = 0; j < o.weftLineNumber ; j++){
+				longtitudeAngle = j*(360/o.weftLineNumber);
+				var x = o.radius*Math.sin(RADIAN*latitudeAngle)*Math.sin(RADIAN*longtitudeAngle);
+				var y = o.radius*Math.sin(RADIAN*latitudeAngle)*Math.cos(RADIAN*longtitudeAngle);
+				var z = o.radius*Math.cos(RADIAN*latitudeAngle);				
 				particles.push({				
 					x: x,
 					y: y,
@@ -88,7 +86,7 @@ var sphere = (function(o){
 					lati: latitudeAngle,
 					long: longtitudeAngle,
 					projectX : 0,
-					projectY : 0
+					projectY : 0,
 				});
 			}			
 		}		
@@ -164,11 +162,11 @@ var sphere = (function(o){
 		ctx.beginPath();
 		ctx.strokeStyle = "rgba(170,170,170,1)";
 		ctx.lineWidth = 0.5;
-		for(var i = 0; i < warpLineNumber ; i++){				
-			p0 = particles[i*weftLineNumber];
+		for(var i = 0; i < o.warpLineNumber ; i++){				
+			p0 = particles[i*o.weftLineNumber];
 			ctx.moveTo(p0.projectX, p0.projectY);			
-			for(var j = 0; j < weftLineNumber ; j++){
-				p = particles[i*weftLineNumber+j];
+			for(var j = 0; j < o.weftLineNumber ; j++){
+				p = particles[i*o.weftLineNumber+j];
 				ctx.lineTo(p.projectX, p.projectY);
 			}
 			ctx.lineTo(p0.projectX, p0.projectY);
@@ -179,11 +177,11 @@ var sphere = (function(o){
 		ctx.beginPath();
 		ctx.strokeStyle = "rgba(170,170,170,1)";
 		ctx.lineWidth = 0.5;
-		for(var i = 0; i < weftLineNumber ; i++){				
+		for(var i = 0; i < o.weftLineNumber ; i++){				
 			p0 = particles[i];
 			ctx.moveTo(p0.projectX, p0.projectY);			
-			for(var j =0; j < warpLineNumber ; j++){
-				p = particles[i + weftLineNumber*j];
+			for(var j =0; j < o.warpLineNumber ; j++){
+				p = particles[i + o.weftLineNumber*j];
 				ctx.lineTo(p.projectX, p.projectY);
 			}
 		}		
@@ -202,68 +200,17 @@ var sphere = (function(o){
 	}
 
 
-	var bindEvent = function(){
-		$("#radius").on("change" , function(){			
-			radius = Math.floor(Math.min(W,H)*$(this).val());
-			reDraw();			
-		});
-		$("#warpLineNumber").on("change" , function(){			
-			warpLineNumber = parseInt($(this).val());
-			reDraw();	
-		});
-		$("#weftLineNumber").on("change" , function(){			
-			weftLineNumber = parseInt($(this).val());
+	var bindEvent = function(){		
+
+		$("input[type='range']").on("change", function(){
+			var id = $(this).attr("id");
+			var value = parseFloat($(this).val());
+			o[id] = value;			
+			$(this).next().val(value);
 			reDraw();
-		});
-
-
-		$("#cameraXF").on("change" , function(){			
-			_cameraXF = parseFloat($(this).val());
-			reDraw();			
-		});
-		$("#cameraYF").on("change" , function(){			
-			_cameraYF = parseFloat($(this).val());
-			reDraw();			
-		});
-		$("#cameraZF").on("change" , function(){			
-			_cameraZF = parseFloat($(this).val());
-			reDraw();
-		});
-
-
-
-		$("#orientationAngleX").on("change" , function(){			
-			_orientationAngleX = parseInt($(this).val());
-			reDraw();			
-		});
-		$("#orientationAngleY").on("change" , function(){			
-			_orientationAngleY = parseInt($(this).val());
-			reDraw();			
-		});
-		$("#orientationAngleZ").on("change" , function(){			
-			_orientationAngleZ = parseInt($(this).val());
-			reDraw();
-		});
-
-		$("#positionXF").on("change" , function(){			
-			_positionXF = parseFloat($(this).val());
-			reDraw();			
-		});
-		$("#positionYF").on("change" , function(){			
-			_positionYF = parseFloat($(this).val());
-			reDraw();			
-		});
-		$("#positionZF").on("change" , function(){			
-			_positionZF = parseFloat($(this).val());
-			reDraw();
-		});
-
-
-		
+		});		
 		
 	}
-
-
 
 
 	return o;

@@ -1,17 +1,31 @@
 
 
 body{
-	background: #ddd;
+	background: #fff;
 }
 
 #operationPanel{
 	position: fixed;
-	right: 30px;
+	right: 10px;
 	top: 30px;
-	background: rgba(255,255,255,0.6);	
+	background: rgba(225,225,255,0.6);	
 	padding: 10px 20px;
+	width: 240px;
+}
+
+#operationPanel label{
+	display: block;
+	width: 100%;
+	clear: both;
 }
 
 #operationPanel input{
-	display: block;
+	display: block;	
+	width: 100px;
+	float:left;
+}
+
+#operationPanel input[type="text"]{
+	float:none;
+	margin-left: 120px;
 }
