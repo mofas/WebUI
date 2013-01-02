@@ -21,11 +21,8 @@ var hexagon = (function(o){
 	
 	var canvas , ctx;	
 	var W , H;
-
-	var radius = 80;
-	var margin = 20;
-	var animationObjLimit = 10;  //animationObjLimit must fewer than layoutPositions.length
-	var layoutPositions = [];
+	
+	var animationObjLimit = 30;  //animationObjLimit
 	var animationStack = [];
 	var animationCounter = 0;
 
@@ -34,49 +31,21 @@ var hexagon = (function(o){
 		H = window.innerHeight;
 		canvas.width = W;
 		canvas.height = H;		
-		clean();
-		layoutPositions = [];	
-		drawlayout();		
-		animationObjLimit = Math.floor(layoutPositions.length/5);
+		clean();		
 	}
 
 	var clean = function(){
 		//ctx.fillStyle = "white";
 		var lingrad = ctx.createLinearGradient(0,H,W,0);
 		lingrad.addColorStop(0, 'rgba(231,210,39,1)');
-		lingrad.addColorStop(0.4, 'rgba(104,21,98,1)');
-		lingrad.addColorStop(0.6, 'rgba(104,21,98,1)');
-	    lingrad.addColorStop(1, 'rgba(162,91,16,1)');
+		lingrad.addColorStop(0.3, 'rgba(104,21,98,1)');
+		lingrad.addColorStop(0.6, 'rgba(162,91,16,1)');
+	    lingrad.addColorStop(0.9, 'rgba(58,97,176,1)');
 		ctx.fillStyle = lingrad;
 		ctx.fillRect(0,0,W,H);
 	}
-
-
-	var drawlayout = function(){
-		
-		var sqr3 = Math.sqrt(3);		
-		var layer = 0;
-		var x = 0 , y = 0;
-		var lingrad;
-		for(var i = -radius ; i < (W+radius); i += radius*(sqr3)){
-			layer = 0;
-			for(var j = -radius ; j < (H+radius) ; j += radius*(3/2)){	
-				layer++;
-				if((layer%2) == 0){					
-					x = i;
-					y = j;
-				}
-				else{					
-					x = i - radius*(sqr3/2);
-					y = j;					
-				}				
-				layoutPositions.push({ x: x , y: y});	
-				//o.drawHexagon(x , y);				
-			}
-		}			
-	}
-
-	o.drawHexagon = function(x, y , opacity){				
+	
+	o.drawHexagon = function(x, y , radius , opacity){				
 		ctx.beginPath();
 
 		//chrome Hack!
@@ -91,11 +60,10 @@ var hexagon = (function(o){
 
 		ctx.fillStyle = lingrad;
 
-		var realRadius = (radius-margin);			
 		var initParse = Math.PI*(1/6);		
-		ctx.moveTo( x + realRadius*Math.cos(initParse), y+realRadius*Math.sin(initParse));
+		ctx.moveTo( x + radius*Math.cos(initParse), y+radius*Math.sin(initParse));
 		for (var i = 1; i < 6; i++) {			
-		    ctx.lineTo( x + realRadius*Math.cos(i*2*Math.PI/6+initParse) , y+realRadius*Math.sin(i*2*Math.PI/6+initParse));
+		    ctx.lineTo( x + radius*Math.cos(i*2*Math.PI/6+initParse) , y+radius*Math.sin(i*2*Math.PI/6+initParse));
 		}
 		ctx.closePath();
 		ctx.lineWidth = "2";
@@ -125,16 +93,9 @@ var hexagon = (function(o){
 	}
 
 	var refreshObj = function(obj){
-		var positionsObj;		
-
-		var randomIndex = Math.floor(Math.random()*layoutPositions.length);
-		while(beUsed(randomIndex)){
-			randomIndex = Math.floor(Math.random()*layoutPositions.length);
-		}		
-		positionsObj = layoutPositions[randomIndex];
-
-		obj.x = positionsObj.x;
-		obj.y = positionsObj.y;
+		obj.x = Math.random()*W;
+		obj.y = Math.random()*H;
+		obj.radius = (Math.random()*8+4)*10;
 		obj.opacity = 0.001;	
 		obj.increment = 1;
 		obj.animationSpeed = Math.random()*0.05 + 0.05;
@@ -149,18 +110,12 @@ var hexagon = (function(o){
 		return conflict;
 	}
 
-	var initStack = function(){
-		var positionsObj;
-		while(animationStack.length < animationObjLimit){
-			var randomIndex = Math.floor(Math.random()*layoutPositions.length);
-			while(beUsed(randomIndex)){
-				randomIndex = Math.floor(Math.random()*layoutPositions.length);
-			}
-			positionsObj = layoutPositions[randomIndex];
+	var initStack = function(){		
+		while(animationStack.length < animationObjLimit){			
 			animationStack.push({
-				no : randomIndex,
-				x  : positionsObj.x,
-				y  : positionsObj.y,
+				radius : (Math.random()*8+4)*10,
+				x  : Math.random()*W,
+				y  : Math.random()*H,
 				opacity : 0.001,
 				increment: 1,
 				animationSpeed : Math.random()*0.05 + 0.05
@@ -181,7 +136,7 @@ var hexagon = (function(o){
 		var obj ;
 		for(var i = 0 ; i < stackLength ; i++){
 			obj = animationStack[i];			
-			o.drawHexagon(obj.x , obj.y , obj.opacity );
+			o.drawHexagon(obj.x , obj.y , obj.radius , obj.opacity );
 			if(obj.increment == 1){
 				obj.opacity += obj.animationSpeed;
 			}
