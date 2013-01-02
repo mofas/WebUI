@@ -23,10 +23,11 @@ var hexagon = (function(o){
 	var W , H;
 
 	var radius = 80;
-	var margin = 0;
+	var margin = 20;
 	var animationObjLimit = 10;  //animationObjLimit must fewer than layoutPositions.length
 	var layoutPositions = [];
 	var animationStack = [];
+	var animationCounter = 0;
 
 	var resize = function(){
 		W = window.innerWidth;
@@ -40,7 +41,12 @@ var hexagon = (function(o){
 	}
 
 	var clean = function(){
-		ctx.fillStyle = "white";
+		//ctx.fillStyle = "white";
+		var lingrad = ctx.createLinearGradient(0,H,W,0);
+		lingrad.addColorStop(0, 'rgba(255,125,255,1)');
+		lingrad.addColorStop(0.5, 'rgba(255,255,125,1)');
+	    lingrad.addColorStop(1, 'rgba(125,255,255,1)');
+		ctx.fillStyle = lingrad;
 		ctx.fillRect(0,0,W,H);
 	}
 
@@ -75,11 +81,11 @@ var hexagon = (function(o){
 		//chrome Hack!
 		ctx.arc(0 , 0 , 0.1 , 0 , Math.PI*2, true);
 
-		opacity = (opacity > 1) ? 1 : opacity;
+		opacity = (opacity > 0.8) ? 0.8 : opacity;
 		opacity = (opacity < 0) ? 0 : opacity;
 
 		lingrad = ctx.createLinearGradient(x-radius,y-radius,x+radius,y+radius);
-		lingrad.addColorStop(0, 'rgba(0,171,235,'+opacity+')');			    
+		lingrad.addColorStop(0, 'rgba(255,255,255,0)');		
 	    lingrad.addColorStop(1, 'rgba(255,255,255,'+opacity+')');
 		ctx.fillStyle = lingrad;
 
@@ -89,8 +95,12 @@ var hexagon = (function(o){
 		for (var i = 1; i < 6; i++) {			
 		    ctx.lineTo( x + realRadius*Math.cos(i*2*Math.PI/6+initParse) , y+realRadius*Math.sin(i*2*Math.PI/6+initParse));
 		}
-		ctx.fill();
 		ctx.closePath();
+		ctx.lineWidth = "2";
+		ctx.strokeStyle = "rgba(255,255,255,"+opacity/2+")";
+		ctx.stroke();
+		ctx.fill();
+		
 	}
 
 
@@ -125,6 +135,7 @@ var hexagon = (function(o){
 		obj.y = positionsObj.y;
 		obj.opacity = 0.01;	
 		obj.increment = 1;
+		obj.animationSpeed = Math.random()*0.05 + 0.05;
 	}
 
 	var beUsed = function(num){
@@ -148,13 +159,21 @@ var hexagon = (function(o){
 				no : randomIndex,
 				x  : positionsObj.x,
 				y  : positionsObj.y,
-				opacity : Math.random()*0.9,
+				opacity : 0.01,
 				increment: 1,
+				animationSpeed : Math.random()*0.05 + 0.05
 			});
 		}
 	}
 
 	var redraw = function(){
+		requestAnimFrame(redraw);
+		animationCounter++;		
+		if(animationCounter < 10){
+			return;
+		}
+		animationCounter = 0;
+
 		clean();
 		var stackLength = animationStack.length;
 		var obj ;
@@ -162,15 +181,13 @@ var hexagon = (function(o){
 			obj = animationStack[i];			
 			o.drawHexagon(obj.x , obj.y , obj.opacity );
 			if(obj.increment == 1){
-				obj.opacity += (0.01+Math.random()*0.05);
+				obj.opacity += obj.animationSpeed;
 			}
 			else{
-				obj.opacity -= (0.01+Math.random()*0.05);
+				obj.opacity -= obj.animationSpeed;
 			}			
-		}
-		requestAnimFrame(redraw);
+		}		
 	}
-
 
 	o.init = function(){
 		canvas = document.getElementById("canvas");
@@ -179,7 +196,7 @@ var hexagon = (function(o){
 		resize();
 		initStack();
 		update();
-		redraw();
+		redraw();		
 	}
 
 	return o;
