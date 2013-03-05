@@ -35,15 +35,15 @@ var sphere = (function(o){
 	o.warpLineNumber = 20;
 	o.weftLineNumber = 60;	
 
-	o.cameraXF = 0.58;
-	o.cameraYF = 0.58;
-	o.cameraZF = 0.58;
-	o.orientationAngleX = -45;
-	o.orientationAngleY = -45;
-	o.orientationAngleZ = -90;
-	o.positionXF = 0.45;
-	o.positionYF = 0.45;
-	o.positionZF = 1.11;
+	o.cameraXF = 0.56;
+	o.cameraYF = 0.45;
+	o.cameraZF = 0.67;
+	o.orientationAngleX = -34;
+	o.orientationAngleY = 38;
+	o.orientationAngleZ = 2;
+	o.positionXF = 0.37;
+	o.positionYF = 0.55;
+	o.positionZF = 0.93;
 
 
 	var resize = function(){
