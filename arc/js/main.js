@@ -54,7 +54,11 @@ var arc = (function(o){
 				innerR = (maxRadius/(animationObjLimit*2))*animationStack.length;
 				outerR = (maxRadius/(animationObjLimit*2))*(animationStack.length+1);
 				startAngle = Math.floor(Math.random()*36)*10;
-			    endAngle = startAngle + Math.floor(Math.random()*90) + 30;
+			    endAngle = startAngle + Math.floor(Math.random()*180) + 90;
+			    if(endAngle > 540){
+			    	startAngle -= 360;
+			    	endAngle -= 360;
+			    }
 			}
 			else{
 				innerR = Math.floor(Math.random()*maxRadius/4) + maxRadius/4;
