@@ -27,20 +27,7 @@ var circlePattern = (function(o){
 	var parallelMode = false;
 		
 	var patternStack = [];	
-
-	var resize = function(){
-		W = window.innerWidth;
-		H = window.innerHeight;
-		canvasPerimeter = Math.min(W , H);
-		canvas.width = W;
-		canvas.height = H;		
-		redraw();
-	}	
-
-	var insertMockObj1 = function(){
-
-
-		var huePool = [
+	var huePool = [
 			"rgb(86, 34, 21)",
 			"rgb(129, 64, 26)",
 			 "rgb(166, 101, 23)",
@@ -49,12 +36,26 @@ var circlePattern = (function(o){
 			 "rgb(217, 243, 40)"
 		];
 
+	var resize = function(){
+		W = window.innerWidth;
+		H = window.innerHeight;
+		canvasPerimeter = Math.min(W , H);
+		canvas.width = W;
+		canvas.height = H;		
+		// redraw();
+	}
+
+	function getRandomColor(){
+		return huePool[Math.floor(Math.random()*huePool.length)];
+	}	
+
+	function createPattern(){
 		//Single circle
 		patternStack.push({			
 			R : 0,
 			repeatAngle : 360,
 			offsetAngle : 0,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(centerX , centerY){
 				ctx.beginPath();
 				ctx.fillStyle = this.hue;
@@ -70,7 +71,7 @@ var circlePattern = (function(o){
 			R : 80,
 			repeatAngle : 15,
 			offsetAngle : 5,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(){
 				ctx.beginPath();				
 				ctx.moveTo(0 , this.R+8);
@@ -87,7 +88,7 @@ var circlePattern = (function(o){
 			R : 100,
 			repeatAngle : 24,
 			offsetAngle : 4,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(){
 				ctx.beginPath();				
 				ctx.moveTo(0 , this.R+20);
@@ -107,7 +108,7 @@ var circlePattern = (function(o){
 			R : 150,
 			repeatAngle : 10,
 			offsetAngle : 0,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(){
 				ctx.beginPath();				
 				ctx.moveTo(0 , this.R-20);
@@ -123,7 +124,7 @@ var circlePattern = (function(o){
 			R : 180,
 			repeatAngle : 6,
 			offsetAngle : 0,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(centerX , centerY){
 				ctx.beginPath();
 				ctx.fillStyle = this.hue;
@@ -137,7 +138,7 @@ var circlePattern = (function(o){
 			R : 230,
 			repeatAngle : 30,
 			offsetAngle : 0,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(centerX , centerY){
 				var r = 30 , offset = 30;
 				ctx.lineWidth = 3;
@@ -155,7 +156,7 @@ var circlePattern = (function(o){
 			R : 30,
 			repeatAngle : 45,
 			offsetAngle : 0,
-			hue : huePool[Math.floor(Math.random()*huePool.length)],
+			hue : getRandomColor(),
 			drawFunction: function(centerX , centerY){
 				ctx.beginPath();
 				ctx.fillStyle = this.hue;
@@ -176,19 +177,20 @@ var circlePattern = (function(o){
 		patternStack.push({			
 			R : 230,
 			repeatAngle : 30,
-			offsetAngle : 0,			
+			offsetAngle : 0,	
+			hue : [getRandomColor(),getRandomColor(),getRandomColor()],
 			drawFunction: function(centerX , centerY){
 				ctx.beginPath();
-				ctx.fillStyle = huePool[Math.floor(Math.random()*huePool.length)];
+				ctx.fillStyle = this.hue[0];
     			ctx.lineWidth = 3;
     			ctx.arc( 0 , this.R , 3 , 0 , Math.PI*2,true);
     			ctx.fill();
     			ctx.beginPath();
-    			ctx.strokeStyle = huePool[Math.floor(Math.random()*huePool.length)];
+    			ctx.strokeStyle = this.hue[1];
     			ctx.arc( 0 , this.R , 10 , 0 , Math.PI*2,true);
     			ctx.stroke();
     			ctx.beginPath();
-    			ctx.strokeStyle = huePool[Math.floor(Math.random()*huePool.length)];
+    			ctx.strokeStyle = this.hue[2];
     			ctx.arc( 0 , this.R , 18 , 0 , Math.PI*2,true);
     			ctx.stroke();		    	
 			}
@@ -243,130 +245,60 @@ var circlePattern = (function(o){
     			ctx.lineWidth = 20;
 		    	ctx.stroke();    			
 			}
-		});
-		
-
+		});		
 	}
 
-
-	var insertMockObj2 = function(){
-		var huePool = [
-			"rgb(86, 34, 21)",
-			"rgb(129, 64, 26)",
-			 "rgb(166, 101, 23)",
-			 "rgb(195, 144, 12)",
-			 "rgb(213, 192, 7)",
-			 "rgb(217, 243, 40)"
-		];
-
-		patternStack.push({			
-			R : 240,
-			repeatAngle : 12,
-			offsetAngle : 0,
-			hue : huePool[1],
-			drawFunction: function(centerX , centerY){
-				ctx.fillStyle = this.hue;
-				ctx.strokeStyle = this.hue;	
-				ctx.beginPath();				
-    			ctx.arc( 0 , this.R , 100 , 0 , Math.PI*2,true);
-    			ctx.fill();
-    			ctx.beginPath();
-    			ctx.lineWidth = 5;
-    			ctx.arc( 0 , this.R , 150 , 0 , Math.PI*2,true);
-    			ctx.stroke();
-    			ctx.beginPath();
-    			ctx.lineWidth = 5;
-    			ctx.arc( 0 , this.R , 200 , 0 , Math.PI*2,true);    			
-		    	ctx.stroke();    			
-			}
-		});
-
-		patternStack.push({			
-			R : 60,
-			repeatAngle : 60,
-			offsetAngle : 0,
-			hue : huePool[1],
-			drawFunction: function(centerX , centerY){
-				ctx.fillStyle = this.hue;
-				ctx.strokeStyle = this.hue;	
-				ctx.beginPath();
-				ctx.lineWidth = 2;		
-    			ctx.arc( 0 , this.R , this.R , 0 , Math.PI*2,true);
-    			ctx.stroke();
-    			ctx.beginPath();
-    			ctx.lineWidth = 5;
-    			ctx.arc( 0 , this.R , this.R*2 , 0 , Math.PI*2,true);
-    			ctx.stroke();
-    			ctx.beginPath();
-    			ctx.lineWidth = 5;
-    			ctx.arc( 0 , this.R , this.R*3 , 0 , Math.PI*2,true);    			
-		    	ctx.stroke();    			
-			}
-		});
-
-		patternStack.push({			
-			R : 220,
-			repeatAngle : 15,
-			offsetAngle : 0,
-			hue : huePool[2],
-			drawFunction: function(centerX , centerY){
-				ctx.fillStyle = this.hue;
-				ctx.strokeStyle = this.hue;	
-				ctx.beginPath();
-				ctx.lineWidth = 20;
-    			ctx.arc( 0 , this.R-15 , 25 , 0 , Math.PI*2,true);
-    			ctx.stroke();
-    			ctx.beginPath();
-    			ctx.strokeStyle = this.hue;
-    			ctx.lineWidth = 40;
-    			ctx.arc( 0 , 0 , this.R-32 , 0 , Math.PI*2,true);
-    			ctx.stroke();
-    			
-			}
-		});
-		
-
-		
-
-		
-
+	function changeColor(patternObj){		
+		patternObj.hue = getRandomColor();
 	}
 
+	function changePattern(patternObj){				
+		var R = patternObj.R;
+		if(R > W || R > H){
+			changeColor(patternObj);
+			patternObj.R = 50+Math.floor(Math.random()*10)*10;	
+		}
+		else{
+			patternObj.R = R*1.005;			
+		}
+		
+	}
 
-	var clean = function(){
+	function clean(){
 		ctx.fillStyle = "#FFF";
 		ctx.fillRect(0,0,W,H);
 	}
 	
 
-	var redraw = function(){
-
+	function redraw(){		
+		
 		clean();
-		var patternObj , R , repeatAngle , offsetAngle , drawFunction;
-		var drawPatternCenterX , drawPatternCenterY;
-		ctx.translate(W/4, H/4);
+		var patternObj , R , repeatAngle , offsetAngle , drawFunction;		
+		ctx.translate(W/2, H/2);
 		for(var i = 0 , n = patternStack.length ; i < n ; i++){
 			patternObj = patternStack[i];			
 			repeatAngle = patternObj.repeatAngle || 360;
 			offsetAngle = patternObj.offsetAngle || 0 ;
-			R = patternObj.R;
+			R = patternObj.R;			
+			changePattern(patternObj);
 			ctx.save();
 			ctx.rotate(offsetAngle);
 			for(var rotateAngle = 0; rotateAngle < 360 ; rotateAngle+=repeatAngle){				
 				ctx.rotate(repeatAngle*Math.PI/180);				
     			patternObj.drawFunction();
-			}
+			}			
 			ctx.restore();
-		}		
+		}
+		ctx.translate(-W/2, -H/2);		
+		requestAnimFrame(redraw);
 	}
 
 	o.init = function(){
 		canvas = document.getElementById("canvas");
 		ctx = canvas.getContext("2d");		
-		$(window).on("resize" , resize);		
+		window.addEventListener("resize" , resize);		
 		resize();	
-		insertMockObj1();
-		//insertMockObj2();
+		createPattern();		
 		redraw();		
 	}
 
