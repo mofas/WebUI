@@ -24,7 +24,7 @@ Object.prototype.clone = function() {
 	return newObj;
 };
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',function(){
 	diamond.init();
 });
 
@@ -257,7 +257,7 @@ var diamond = (function(o){
 	o.init = function(){
 		canvas = document.getElementById("canvas");
 		ctx = canvas.getContext("2d");		
-		$(window).on("resize" , resize);
+		window.addEventListener("resize" , resize);
 		resize();		
 		redraw();
 	}

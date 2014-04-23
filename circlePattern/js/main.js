@@ -10,11 +10,9 @@ window.requestAnimFrame = (function(){
           };
 })();
 
-
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',function(){
 	circlePattern.init();
 });
-
 
 
 var circlePattern = (function(o){
@@ -296,7 +294,7 @@ var circlePattern = (function(o){
 	o.init = function(){
 		canvas = document.getElementById("canvas");
 		ctx = canvas.getContext("2d");		
-		window.addEventListener("resize" , resize);		
+		window.addEventListener("resize" , resize);
 		resize();	
 		createPattern();		
 		redraw();		

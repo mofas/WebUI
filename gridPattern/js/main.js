@@ -1,9 +1,7 @@
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded',function(){
 	gridPattern.init();
-});
-
-
+})
 
 var gridPattern = (function(o){
 	
@@ -85,7 +83,7 @@ var gridPattern = (function(o){
 	o.init = function(){
 		canvas = document.getElementById("canvas");
 		ctx = canvas.getContext("2d");		
-		$(window).on("resize" , resize);		
+		window.addEventListener("resize" , resize);
 		resize();		
 		o.draw();				
 	}
